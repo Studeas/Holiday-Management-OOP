@@ -1,18 +1,18 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ SearchYMDRange.cpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤SearchYMDRangeÀà£¬¼¯ÖĞ±àĞ´SearchYMDRangeÀà³ÉÔ±º¯ÊıµÄ¶¨Òå¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ SearchYMDRange.cpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤SearchYMDRangeç±»ï¼Œé›†ä¸­ç¼–å†™SearchYMDRangeç±»æˆå‘˜å‡½æ•°çš„å®šä¹‰ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #include "SearchYMDRange.hpp"
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ SearchYMDRange¡¾º¯Êı¹¦ÄÜ¡¿ ¹¹Ôìº¯Êı
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıYMDDate1£¬ÊäÈë²ÎÊıYMDDate2£¬ÊäÈë²ÎÊıSortType
-¡¾·µ»ØÖµ¡¿ ¹¹Ôìº¯Êı£¬ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ SearchYMDRangeã€å‡½æ•°åŠŸèƒ½ã€‘ æ„é€ å‡½æ•°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°YMDDate1ï¼Œè¾“å…¥å‚æ•°YMDDate2ï¼Œè¾“å…¥å‚æ•°SortType
+ã€è¿”å›å€¼ã€‘ æ„é€ å‡½æ•°ï¼Œæ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 SearchYMDRange::SearchYMDRange(const YMDDate& YMDDate1
 							, const YMDDate& YMDDate2
@@ -24,22 +24,22 @@ SearchYMDRange::SearchYMDRange(const YMDDate& YMDDate1
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ CmpDate¡¾º¯Êı¹¦ÄÜ¡¿ °´ÕÕÈÕÆÚÉıĞòÅÅĞò
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıa£¬ÊäÈë²ÎÊıb
-¡¾·µ»ØÖµ¡¿ aµÄÈÕÆÚĞ¡ÓÚbÔò·µ»Øtrue
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ CmpDateã€å‡½æ•°åŠŸèƒ½ã€‘ æŒ‰ç…§æ—¥æœŸå‡åºæ’åº
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°aï¼Œè¾“å…¥å‚æ•°b
+ã€è¿”å›å€¼ã€‘ açš„æ—¥æœŸå°äºbåˆ™è¿”å›true
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 bool CmpDate(Festival::FestivalInThisYear* a, Festival::FestivalInThisYear* b) {
 	return a->m_DaysInTotal < b->m_DaysInTotal;
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ CmpName¡¾º¯Êı¹¦ÄÜ¡¿ °´ÕÕÊ××ÖÄ¸ÉıĞòÅÅĞò
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıa£¬ÊäÈë²ÎÊıb
-¡¾·µ»ØÖµ¡¿ aµÄÊ××ÖÄ¸ÔÙbÖ®Ç°Ôò·µ»Øtrue
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ CmpNameã€å‡½æ•°åŠŸèƒ½ã€‘ æŒ‰ç…§é¦–å­—æ¯å‡åºæ’åº
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°aï¼Œè¾“å…¥å‚æ•°b
+ã€è¿”å›å€¼ã€‘ açš„é¦–å­—æ¯å†bä¹‹å‰åˆ™è¿”å›true
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 bool CmpName(Festival::FestivalInThisYear* a, Festival::FestivalInThisYear* b) {
 	char Initial_a = a->m_Name[0];
@@ -54,11 +54,11 @@ bool CmpName(Festival::FestivalInThisYear* a, Festival::FestivalInThisYear* b) {
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ PrintFestivals¡¾º¯Êı¹¦ÄÜ¡¿ ²éÕÒ¡¢ÅÅĞò²¢ÇÒ´òÓ¡
-¡¾²ÎÊı¡¿ ÎŞ
-¡¾·µ»ØÖµ¡¿ TheseYearsFestivals ²éÕÒ½á¹ûµÄlist
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ PrintFestivalsã€å‡½æ•°åŠŸèƒ½ã€‘ æŸ¥æ‰¾ã€æ’åºå¹¶ä¸”æ‰“å°
+ã€å‚æ•°ã€‘ æ— 
+ã€è¿”å›å€¼ã€‘ TheseYearsFestivals æŸ¥æ‰¾ç»“æœçš„list
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 vector<Festival::FestivalInThisYear*> SearchYMDRange::PrintFestivals() const {
 	unsigned int MaxDaysInTotal = m_YMDDate2.DaysPassedInTotal();
@@ -67,7 +67,7 @@ vector<Festival::FestivalInThisYear*> SearchYMDRange::PrintFestivals() const {
 	vector<Festival::FestivalInThisYear*> TheseYearsFestivals 
 		= Festival::GetFestivalInThisYearList(m_YMDDate1.GetYear());
 
-	//Ê×ÏÈ½«ËùËÑË÷µÄÄê·İµÄ½ÚÈÕ¶¼´æ½øÀ´
+	//é¦–å…ˆå°†æ‰€æœç´¢çš„å¹´ä»½çš„èŠ‚æ—¥éƒ½å­˜è¿›æ¥
 	for (unsigned int Year = m_YMDDate1.GetYear() + 1
 		; Year <= m_YMDDate2.GetYear(); Year++) {
 		vector<Festival::FestivalInThisYear*> Temp 
@@ -76,7 +76,7 @@ vector<Festival::FestivalInThisYear*> SearchYMDRange::PrintFestivals() const {
 			, Temp.begin(), Temp.end());
 	}
 	cout << "try";
-	//È»ºó±éÀú£¬É¾³ıÈÕÆÚÖ®ÍâµÄ½ÚÈÕ
+	//ç„¶åéå†ï¼Œåˆ é™¤æ—¥æœŸä¹‹å¤–çš„èŠ‚æ—¥
 	vector<Festival::FestivalInThisYear*>::iterator n 
 		= TheseYearsFestivals.begin();
 	for (n; n != TheseYearsFestivals.end(); n++) {
@@ -87,7 +87,7 @@ vector<Festival::FestivalInThisYear*> SearchYMDRange::PrintFestivals() const {
 			n = TheseYearsFestivals.erase(n);
 		}
 	}
-	//°´ÕÕÑ¡Ôñ½øĞĞÅÅĞò
+	//æŒ‰ç…§é€‰æ‹©è¿›è¡Œæ’åº
 	if (m_SortType == SortType::BY_DATE) {
 		sort(TheseYearsFestivals.begin(), TheseYearsFestivals.end(), CmpName);
 		sort(TheseYearsFestivals.begin(), TheseYearsFestivals.end(), CmpDate);
@@ -96,7 +96,7 @@ vector<Festival::FestivalInThisYear*> SearchYMDRange::PrintFestivals() const {
 		sort(TheseYearsFestivals.begin(), TheseYearsFestivals.end(), CmpDate);
 		sort(TheseYearsFestivals.begin(), TheseYearsFestivals.end(), CmpName);
 	}
-	//´òÓ¡ÌáÊ¾Óï
+	//æ‰“å°æç¤ºè¯­
 	cout << "Festivals in this period (" 
 		<< m_YMDDate1.GetMonth(Month::NameType::FULL) << "." 
 		<< m_YMDDate1.GetDay() << ", " << m_YMDDate1.GetYear()
@@ -107,6 +107,6 @@ vector<Festival::FestivalInThisYear*> SearchYMDRange::PrintFestivals() const {
 			<< setw(2) << setfill('0') << n->m_YMDDate.GetDay() << ", " 
 			<< n->m_YMDDate.GetYear() << "   " << n->m_Name << endl;
 	}
-	//·µ»Ø½á¹û
+	//è¿”å›ç»“æœ
 	return TheseYearsFestivals;
 }

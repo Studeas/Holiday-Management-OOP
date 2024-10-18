@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼þÃû¡¿ MDDate.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤MDDateÀà£¬¼¯ÖÐ±àÐ´MDDateÀà³ÉÔ±º¯ÊýµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€æ–‡ä»¶åã€‘ MDDate.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤MDDateç±»ï¼Œé›†ä¸­ç¼–å†™MDDateç±»æˆå‘˜å‡½æ•°çš„å£°æ˜Žã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #ifndef MDDate_hpp
@@ -11,36 +11,36 @@
 #include "Month.hpp"
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ MDDate
-¡¾¹¦ÄÜ¡¿ ÔÂÈÕÈÕÆÚ£¬°üº¬ËùÓÐ¿ÉÄÜµÄÈÕÆÚ£¨º¬2.29£©£¬²»¿¼ÂÇÆ½ÈòÄê¡£
-¡¾½Ó¿ÚËµÃ÷¡¿ 6¸ögetterÓÃÀ´»ñÈ¡Êý¾Ý£¬5¸ösetterÓÃÀ´ÐÞ¸Ä³ÉÔ±Êý¾Ý£¬4¸öIsValidÅÐ¶ÏºÏ·¨ÐÔ¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€ç±»åã€‘ MDDate
+ã€åŠŸèƒ½ã€‘ æœˆæ—¥æ—¥æœŸï¼ŒåŒ…å«æ‰€æœ‰å¯èƒ½çš„æ—¥æœŸï¼ˆå«2.29ï¼‰ï¼Œä¸è€ƒè™‘å¹³é—°å¹´ã€‚
+ã€æŽ¥å£è¯´æ˜Žã€‘ 6ä¸ªgetterç”¨æ¥èŽ·å–æ•°æ®ï¼Œ5ä¸ªsetterç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®ï¼Œ4ä¸ªIsValidåˆ¤æ–­åˆæ³•æ€§ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class MDDate {
 public:
-	//É¾³ýÄ¬ÈÏ¹¹Ôìº¯Êý
+	//åˆ é™¤é»˜è®¤æž„é€ å‡½æ•°
 	MDDate() = delete;
 
-	//´ø²ÎÊýµÄ¹¹Ôìº¯Êý
+	//å¸¦å‚æ•°çš„æž„é€ å‡½æ•°
 	MDDate(const unsigned int& uMonth, const unsigned int& uDay);
 	MDDate(const Month& Month, const unsigned int& uDay);
 
-	//Ä¬ÈÏ¿½±´¹¹Ôìº¯ÊýºÍÄ¬ÈÏÎö¹¹º¯Êý
+	//é»˜è®¤æ‹·è´æž„é€ å‡½æ•°å’Œé»˜è®¤æžæž„å‡½æ•°
 	MDDate(const MDDate& MDDate) = default;
 	~MDDate() = default;
 
-	//¸³ÖµÔËËã·û
+	//èµ‹å€¼è¿ç®—ç¬¦
 	MDDate& operator=(const MDDate& MDDate);
 
-	//ÉèÖÃÔÂ¡¢ÈÕÈÕÆÚ
+	//è®¾ç½®æœˆã€æ—¥æ—¥æœŸ
 	void Set(const unsigned int& uMonth, const unsigned int& uDay);
 	void Set(const Month& Month, const unsigned int& uDay);
 	void SetMonth(const unsigned int& uMonth);
 	void SetMonth(const Month& Month);
 	void SetDay(const unsigned int& uDay);
 
-	//ÅÐ¶ÏÔÂÈÕÈÕÆÚÊÇ·ñºÏ·¨
+	//åˆ¤æ–­æœˆæ—¥æ—¥æœŸæ˜¯å¦åˆæ³•
 	static bool IsValidMDDate(const unsigned int& uMonth
 							, const unsigned int& uDay);
 	static bool IsValidMDDate(const Month::ValueType& Month
@@ -49,43 +49,43 @@ public:
 							, const unsigned int& uDay);
 	bool IsValidMDDate() const;
 
-	//==ÔËËã·û
+	//==è¿ç®—ç¬¦
 	bool operator==(const MDDate& Source) const;
 	friend bool operator==(const MDDate& MDDate1, const MDDate& MDDate2);
-	//!=ÔËËã·û
+	//!=è¿ç®—ç¬¦
 	bool operator!=(const MDDate& Source) const;
 	friend bool operator!=(const MDDate& MDDate1, const MDDate& MDDate2);
-	//>ÔËËã·û
+	//>è¿ç®—ç¬¦
 	bool operator>(const MDDate& Source) const;
 	friend bool operator>(const MDDate& MDDate1, const MDDate& MDDate2);
-	//<ÔËËã·û
+	//<è¿ç®—ç¬¦
 	bool operator<(const MDDate& Source) const;
 	friend bool operator<(const MDDate& MDDate1, const MDDate& MDDate2);
-	//>=ÔËËã·û
+	//>=è¿ç®—ç¬¦
 	bool operator>=(const MDDate& Source) const;
 	friend bool operator>=(const MDDate& MDDate1, const MDDate& MDDate2);
-	//<=ÔËËã·û
+	//<=è¿ç®—ç¬¦
 	bool operator<=(const MDDate& Source) const;
 	friend bool operator<=(const MDDate& MDDate1, const MDDate& MDDate2);
-	//++ÔËËã·û
+	//++è¿ç®—ç¬¦
 	MDDate& operator++();
 	MDDate  operator++(int);
-	//--ÔËËã·û
+	//--è¿ç®—ç¬¦
 	MDDate& operator--();
 	MDDate  operator--(int);
 
-	//»ñµÃÔÂ
+	//èŽ·å¾—æœˆ
 	string GetMonth(const Month::NameType& Type = Month::NameType::SHORT) const;
-	//»ñµÃÔÂµÄÊýÖµ
+	//èŽ·å¾—æœˆçš„æ•°å€¼
 	unsigned int GetMonthValue() const;
-	//»ñµÃÈÕ
+	//èŽ·å¾—æ—¥
 	unsigned int GetDay() const;
-	//»ñµÃÔÂµÄ×î´óÈÕ£¨´Ë´¦²»¿¼ÂÇÆ½Èò£¬2ÔÂÎª29ÈÕ£©
+	//èŽ·å¾—æœˆçš„æœ€å¤§æ—¥ï¼ˆæ­¤å¤„ä¸è€ƒè™‘å¹³é—°ï¼Œ2æœˆä¸º29æ—¥ï¼‰
 	static unsigned int GetDaysOfMonthMax(const Month& Month);
 	static unsigned int GetDaysOfMonthMax(const unsigned int& uMonth);
 	unsigned int GetDaysOfMonthMax() const;
 	
-	//³£ÒýÓÃ
+	//å¸¸å¼•ç”¨
 	const Month& TheMonth;
 	const unsigned int& Day;
 

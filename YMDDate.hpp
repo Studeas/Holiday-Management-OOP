@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼þÃû¡¿ YMDDate.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤YMDDateÀà£¬¼¯ÖÐ±àÐ´YMDDateÀà³ÉÔ±º¯ÊýµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€æ–‡ä»¶åã€‘ YMDDate.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤YMDDateç±»ï¼Œé›†ä¸­ç¼–å†™YMDDateç±»æˆå‘˜å‡½æ•°çš„å£°æ˜Žã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #ifndef YMDDate_hpp
@@ -14,19 +14,19 @@
 #include <ctime>
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ YMDDate
-¡¾¹¦ÄÜ¡¿ Ä³ÄêÄ³ÔÂÄ³ÈÕÀàÐÍµÄÈÕÆÚ£¬ÄêÔÂÈÕÀàÐÍ
-¡¾½Ó¿ÚËµÃ÷¡¿ 1¸ögetterÓÃÀ´»ñÈ¡Êý¾Ý£¬3¸ösetterÓÃÀ´ÐÞ¸Ä³ÉÔ±Êý¾Ý£¬IsLeapYearÅÐ¶Ï
-			Æ½ÈòÄê£¬IsValidYMDDateÅÐ¶ÏÈÕÆÚºÏ·¨ÐÔ£¬DaysPassedInThisYear½ñÄêµÄ
-			µÚ¼¸Ìì£¬DaysPassedInTotal×Ü¹²ÊÇµÚ¼¸Ìì£¬ToWeekDayÊÇÐÇÆÚ¼¸£¬
-			ToMOWeekDayÊÇÄÄ¸öÔÂµÚÄ³¸öÐÇÆÚ¼¸£¬YMOWeekDayToYMDDate YMOW×ª»»³É
-			ÄêÔÂÈÕ£¬Today¸ø³ö½ñÌì£¬Èô¸ÉÔËËã·ûÖØÔØ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€ç±»åã€‘ YMDDate
+ã€åŠŸèƒ½ã€‘ æŸå¹´æŸæœˆæŸæ—¥ç±»åž‹çš„æ—¥æœŸï¼Œå¹´æœˆæ—¥ç±»åž‹
+ã€æŽ¥å£è¯´æ˜Žã€‘ 1ä¸ªgetterç”¨æ¥èŽ·å–æ•°æ®ï¼Œ3ä¸ªsetterç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®ï¼ŒIsLeapYearåˆ¤æ–­
+			å¹³é—°å¹´ï¼ŒIsValidYMDDateåˆ¤æ–­æ—¥æœŸåˆæ³•æ€§ï¼ŒDaysPassedInThisYearä»Šå¹´çš„
+			ç¬¬å‡ å¤©ï¼ŒDaysPassedInTotalæ€»å…±æ˜¯ç¬¬å‡ å¤©ï¼ŒToWeekDayæ˜¯æ˜ŸæœŸå‡ ï¼Œ
+			ToMOWeekDayæ˜¯å“ªä¸ªæœˆç¬¬æŸä¸ªæ˜ŸæœŸå‡ ï¼ŒYMOWeekDayToYMDDate YMOWè½¬æ¢æˆ
+			å¹´æœˆæ—¥ï¼ŒTodayç»™å‡ºä»Šå¤©ï¼Œè‹¥å¹²è¿ç®—ç¬¦é‡è½½
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class YMDDate : public MDDate {
 public:
-	//´ø²ÎÊýµÄ¹¹Ôìº¯Êý
+	//å¸¦å‚æ•°çš„æž„é€ å‡½æ•°
 	YMDDate(const unsigned int& uYear
 			, const unsigned int& uMonth
 			, const unsigned int& uDay);
@@ -34,37 +34,37 @@ public:
 			, const Month& Month
 			, const unsigned int& uDay);
 	YMDDate(const unsigned int& uYear, const MDDate& MDDate);
-	//Ä¬ÈÏ¿½±´¹¹Ôìº¯Êý¡¢¹¹Ôìº¯Êý¡¢Îö¹¹º¯Êý
+	//é»˜è®¤æ‹·è´æž„é€ å‡½æ•°ã€æž„é€ å‡½æ•°ã€æžæž„å‡½æ•°
 	YMDDate(const YMDDate&) = default;
 	YMDDate() = default;
 	~YMDDate() = default;
-	//¸³ÖµÔËËã·û
+	//èµ‹å€¼è¿ç®—ç¬¦
 	YMDDate& operator=(const YMDDate& Source);
-	//==ÔËËã·û
+	//==è¿ç®—ç¬¦
 	bool operator==(const YMDDate& Source) const;
 	friend bool operator==(const YMDDate& YMDDate1, const YMDDate& YMDDate2);
-	//!=ÔËËã·û
+	//!=è¿ç®—ç¬¦
 	bool operator!=(const YMDDate& Source) const;
 	friend bool operator!=(const YMDDate& YMDDate1, const YMDDate& YMDDate2);
-	//>ÔËËã·û
+	//>è¿ç®—ç¬¦
 	bool operator>(const YMDDate& Source) const;
 	friend bool operator>(const YMDDate& YMDDate1, const YMDDate& YMDDate2);
-	//<ÔËËã·û
+	//<è¿ç®—ç¬¦
 	bool operator<(const YMDDate& Source) const;
 	friend bool operator<(const YMDDate& YMDDate1, const YMDDate& YMDDate2);
-	//>=ÔËËã·û
+	//>=è¿ç®—ç¬¦
 	bool operator>=(const YMDDate& Source) const;
 	friend bool operator>=(const YMDDate& YMDDate1, const YMDDate& YMDDate2);
-	//<=ÔËËã·û
+	//<=è¿ç®—ç¬¦
 	bool operator<=(const YMDDate& Source) const;
 	friend bool operator<=(const YMDDate& YMDDate1, const YMDDate& YMDDate2);
-	//++ÔËËã·û
+	//++è¿ç®—ç¬¦
 	YMDDate& operator++();
 	YMDDate  operator++(int);
-	//--ÔËËã·û
+	//--è¿ç®—ç¬¦
 	YMDDate& operator--();
 	YMDDate  operator--(int);
-	//ÉèÖÃÄêÔÂÈÕ
+	//è®¾ç½®å¹´æœˆæ—¥
 	void Set(const unsigned int& uYear, const MDDate& MDDate);
 	void Set(const unsigned int& uYear
 			, const Month& Month
@@ -72,14 +72,14 @@ public:
 	void Set(const unsigned int& uYear
 			, const unsigned int& uMonth
 			, const unsigned int& uDay);
-	//ÉèÖÃÄê
+	//è®¾ç½®å¹´
 	void SetYear(const unsigned int& uYear);
-	//»ñµÃÄê
+	//èŽ·å¾—å¹´
 	unsigned int GetYear() const;
-	//ÅÐ¶ÏÊÇ·ñÊÇÈòÄê
+	//åˆ¤æ–­æ˜¯å¦æ˜¯é—°å¹´
 	bool IsLeapYear() const;
 	static bool IsLeapYear(const unsigned int& uYear);
-	//ÅÐ¶ÏÈÕÆÚÊÇ·ñºÏ·¨
+	//åˆ¤æ–­æ—¥æœŸæ˜¯å¦åˆæ³•
 	bool IsValidYMDDate() const;
 	static bool IsValidYMDDate(const unsigned int& uYear
 							, const Month& Month
@@ -87,13 +87,13 @@ public:
 	static bool IsValidYMDDate(const unsigned int& uYear
 							, const unsigned int& uMonth
 							, const unsigned int& uDay);
-	//ÊÇµ±ÄêµÄµÚ¼¸Ìì
+	//æ˜¯å½“å¹´çš„ç¬¬å‡ å¤©
 	unsigned int DaysPassedInThisYear() const;
 	static unsigned int DaysPassedInThisYear(const YMDDate& YMDDate);
-	//´Ó19000101ËãÆð£¬ÊÇµÚ¼¸Ìì
+	//ä»Ž19000101ç®—èµ·ï¼Œæ˜¯ç¬¬å‡ å¤©
 	unsigned int DaysPassedInTotal() const;//since 1900.1.1
 	static unsigned int DaysPassedInTotal(const YMDDate& YMDDate);
-	//×ª»»³ÉÐÇÆÚ¼¸
+	//è½¬æ¢æˆæ˜ŸæœŸå‡ 
 	WeekDay ToWeekDay() const;
 	static WeekDay ToWeekDay(const YMDDate& YMDDate);
 	static WeekDay ToWeekDay(const unsigned int& uYear
@@ -102,7 +102,7 @@ public:
 	static WeekDay ToWeekDay(const unsigned int& uYear
 							, const Month& Month
 							, const unsigned int& uDay);
-	//×ª»»³É£¬Ä³ÔÂµÚÄ³¸öÐÇÆÚ¼¸
+	//è½¬æ¢æˆï¼ŒæŸæœˆç¬¬æŸä¸ªæ˜ŸæœŸå‡ 
 	MOWeekDay ToMOWeekDay() const;
 	static MOWeekDay ToMOWeekDay(const YMDDate& YMDDate);
 	static MOWeekDay ToMOWeekDay(const unsigned int& uYear
@@ -111,12 +111,12 @@ public:
 	static MOWeekDay ToMOWeekDay(const unsigned int& uYear
 								, const Month& Month
 								, const unsigned int& uDay);
-	//YMOW×ª»»³ÉÄêÔÂÈÕ
+	//YMOWè½¬æ¢æˆå¹´æœˆæ—¥
 	static YMDDate YMOWeekDayToYMDDate(const unsigned int& uYear
 									, const unsigned int& uMonth
 									, const unsigned int& uOrdial
 									, const unsigned int& uWeekDay);
-	//½ñÌì
+	//ä»Šå¤©
 	static YMDDate Today();
 
 private:

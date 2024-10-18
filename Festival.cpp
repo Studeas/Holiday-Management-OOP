@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ Festival.cpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤FestivalÀà£¬¼¯ÖĞ±àĞ´FestivalÀà³ÉÔ±º¯ÊıµÄ¶¨Òå¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ Festival.cpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤Festivalç±»ï¼Œé›†ä¸­ç¼–å†™Festivalç±»æˆå‘˜å‡½æ•°çš„å®šä¹‰ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #include "Festival.hpp"
@@ -17,27 +17,27 @@ vector<Festival*> Festival::m_All{};
 Festival::Garbo Festival::m_Garbo{};
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ Festival¡¾º¯Êı¹¦ÄÜ¡¿ ´ø²ÎÊıµÄ¹¹Ôìº¯Êı£¬°´ÕÕÃû³Æ¹¹Ôì½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısName
-¡¾·µ»ØÖµ¡¿ ¹¹Ôìº¯Êı£¬ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ Festivalã€å‡½æ•°åŠŸèƒ½ã€‘ å¸¦å‚æ•°çš„æ„é€ å‡½æ•°ï¼ŒæŒ‰ç…§åç§°æ„é€ èŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sName
+ã€è¿”å›å€¼ã€‘ æ„é€ å‡½æ•°ï¼Œæ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 Festival::Festival(const string& sName) :Name(m_Name) {
     m_Name = sName;
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ Del¡¾º¯Êı¹¦ÄÜ¡¿ É¾³ı½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısName
-¡¾·µ»ØÖµ¡¿ bool£¬É¾³ı³É¹¦·µ»Øtrue
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ Delã€å‡½æ•°åŠŸèƒ½ã€‘ åˆ é™¤èŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sName
+ã€è¿”å›å€¼ã€‘ boolï¼Œåˆ é™¤æˆåŠŸè¿”å›true
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 bool Festival::Del(const string& sName) {
-    //µü´úÆ÷
+    //è¿­ä»£å™¨
     vector<Festival*>::iterator n = m_All.begin();
-    //±éÀú²éÕÒ£¬ÕÒµ½É¾³ı
+    //éå†æŸ¥æ‰¾ï¼Œæ‰¾åˆ°åˆ é™¤
     for (n; n != m_All.end();n++) {
         if ((*n)->Name == sName) {
             delete* n;
@@ -46,16 +46,16 @@ bool Festival::Del(const string& sName) {
             return true;
         }
     }
-    throw invalid_argument("²»´æÔÚ¸Ã½ÚÈÕ£¬É¾³ıÊ§°Ü¡£");
+    throw invalid_argument("ä¸å­˜åœ¨è¯¥èŠ‚æ—¥ï¼Œåˆ é™¤å¤±è´¥ã€‚");
     return false;
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ Clear¡¾º¯Êı¹¦ÄÜ¡¿ Çå³ı¶¯Ì¬ÄÚ´æ
-¡¾²ÎÊı¡¿ ÎŞ
-¡¾·µ»ØÖµ¡¿ ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ Clearã€å‡½æ•°åŠŸèƒ½ã€‘ æ¸…é™¤åŠ¨æ€å†…å­˜
+ã€å‚æ•°ã€‘ æ— 
+ã€è¿”å›å€¼ã€‘ æ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 void Festival::Clear() {
     for (auto& n : m_All) {
@@ -66,22 +66,22 @@ void Festival::Clear() {
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ GetFestivalName¡¾º¯Êı¹¦ÄÜ¡¿ »ñÈ¡½ÚÈÕÃû³Æ
-¡¾²ÎÊı¡¿ ÎŞ
-¡¾·µ»ØÖµ¡¿ string m_Name£¬½ÚÈÕÃû³Æ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ GetFestivalNameã€å‡½æ•°åŠŸèƒ½ã€‘ è·å–èŠ‚æ—¥åç§°
+ã€å‚æ•°ã€‘ æ— 
+ã€è¿”å›å€¼ã€‘ string m_Nameï¼ŒèŠ‚æ—¥åç§°
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 string Festival::GetFestivalName() const {
     return m_Name;
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ ModifyName¡¾º¯Êı¹¦ÄÜ¡¿ ĞŞ¸ÄÃû³Æ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısOldName, ÊäÈë²ÎÊısNewName
-¡¾·µ»ØÖµ¡¿ bool£¬ĞŞ¸Ä³É¹¦·µ»Øtrue
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ ModifyNameã€å‡½æ•°åŠŸèƒ½ã€‘ ä¿®æ”¹åç§°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sOldName, è¾“å…¥å‚æ•°sNewName
+ã€è¿”å›å€¼ã€‘ boolï¼Œä¿®æ”¹æˆåŠŸè¿”å›true
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 bool Festival::ModifyName(const string& sOldName, const string& sNewName) {
     SearchFestivalByName(sOldName)->m_Name = sNewName;
@@ -89,11 +89,11 @@ bool Festival::ModifyName(const string& sOldName, const string& sNewName) {
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ SearchFestivalByName¡¾º¯Êı¹¦ÄÜ¡¿ °´Ãû³Æ²éÕÒ½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısTargetName
-¡¾·µ»ØÖµ¡¿ Festival*Ö¸Õë£¬¿ÉÒÔ·ÃÎÊµ½Ä¿±ê½ÚÈÕ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ SearchFestivalByNameã€å‡½æ•°åŠŸèƒ½ã€‘ æŒ‰åç§°æŸ¥æ‰¾èŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sTargetName
+ã€è¿”å›å€¼ã€‘ Festival*æŒ‡é’ˆï¼Œå¯ä»¥è®¿é—®åˆ°ç›®æ ‡èŠ‚æ—¥
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 Festival* Festival::SearchFestivalByName(const string& sTargetName) {
     for (auto& n : m_All) {
@@ -101,15 +101,15 @@ Festival* Festival::SearchFestivalByName(const string& sTargetName) {
             return n;
         }
     }
-    throw invalid_argument("²»´æÔÚ¸Ã½ÚÈÕ¡£");
+    throw invalid_argument("ä¸å­˜åœ¨è¯¥èŠ‚æ—¥ã€‚");
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ FestivalInThisYear::FestivalInThisYear¡¾º¯Êı¹¦ÄÜ¡¿ ÄÚÇ¶Àà¹¹Ôìº¯Êı
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısName£¬YMDDate£¬uDaysInTotal
-¡¾·µ»ØÖµ¡¿ ¹¹Ôìº¯Êı£¬ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ FestivalInThisYear::FestivalInThisYearã€å‡½æ•°åŠŸèƒ½ã€‘ å†…åµŒç±»æ„é€ å‡½æ•°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sNameï¼ŒYMDDateï¼ŒuDaysInTotal
+ã€è¿”å›å€¼ã€‘ æ„é€ å‡½æ•°ï¼Œæ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 Festival::FestivalInThisYear::FestivalInThisYear(const string& sName
                 , const YMDDate& YMDDate, const unsigned int& uDaysInTotal) :
@@ -118,36 +118,36 @@ Festival::FestivalInThisYear::FestivalInThisYear(const string& sName
 
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ GetFestivalInThisYearList¡¾º¯Êı¹¦ÄÜ¡¿ µÃµ½Ä³ÄêµÄÈ«²¿½ÚÈÕĞÅÏ¢
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıuYear
-¡¾·µ»ØÖµ¡¿ vector<Festival::FestivalInThisYear*> FestivalInThisYearList²éÕÒ½á¹û
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ GetFestivalInThisYearListã€å‡½æ•°åŠŸèƒ½ã€‘ å¾—åˆ°æŸå¹´çš„å…¨éƒ¨èŠ‚æ—¥ä¿¡æ¯
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°uYear
+ã€è¿”å›å€¼ã€‘ vector<Festival::FestivalInThisYear*> FestivalInThisYearListæŸ¥æ‰¾ç»“æœ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 vector<Festival::FestivalInThisYear*> 
     Festival::GetFestivalInThisYearList(const unsigned int& uYear) {
-    //¾Ö²¿±äÁ¿£¬´æ´¢²éÕÒ½á¹û
+    //å±€éƒ¨å˜é‡ï¼Œå­˜å‚¨æŸ¥æ‰¾ç»“æœ
     vector<FestivalInThisYear*> FestivalInThisYearList;
 
-    //±éÀúm_All£¬²éÕÒ½ÚÈÕ£¬·ÖÀà±ğ´¦Àí
+    //éå†m_Allï¼ŒæŸ¥æ‰¾èŠ‚æ—¥ï¼Œåˆ†ç±»åˆ«å¤„ç†
     for (auto& n : m_All) {
-        //½ÚÈÕÎªSPECIAL_DATE
+        //èŠ‚æ—¥ä¸ºSPECIAL_DATE
         if (n->GetType() == FestivalType::SPECIAL_DATE) {
-            //Èç¹û¸Ã½ÚÈÕÔÚµ±Äê
+            //å¦‚æœè¯¥èŠ‚æ—¥åœ¨å½“å¹´
             if (n->GetYMDDate().GetYear() == uYear) {
                 FestivalInThisYear* Temp = new FestivalInThisYear(n->Name
                     , n->GetYMDDate(), n->GetYMDDate().DaysPassedInTotal());
                 FestivalInThisYearList.push_back(Temp);
             }
         }
-        //½ÚÈÕÎªREGULAR_DATE
+        //èŠ‚æ—¥ä¸ºREGULAR_DATE
         if (n->GetType() == FestivalType::REGULAR_DATE) {
             FestivalInThisYear* Temp = new FestivalInThisYear(n->Name
                 , YMDDate(uYear, n->GetMDDate())
                 , YMDDate(uYear, n->GetMDDate()).DaysPassedInTotal());
             FestivalInThisYearList.push_back(Temp);
         }
-        //½ÚÈÕÎªREGULAR_WEEKDAY
+        //èŠ‚æ—¥ä¸ºREGULAR_WEEKDAY
         if (n->GetType() == FestivalType::REGULAR_WEEKDAY) {
             YMDDate ThisYearYMD = YMDDate::YMOWeekDayToYMDDate(uYear
                 , n->GetMOWeekDay().GetMonthValue()
@@ -162,11 +162,11 @@ vector<Festival::FestivalInThisYear*>
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ SaveToFile¡¾º¯Êı¹¦ÄÜ¡¿ ´æ´¢ĞÅÏ¢µ½Ö¸¶¨ÎÄ¼ş
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıFileName
-¡¾·µ»ØÖµ¡¿ ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ SaveToFileã€å‡½æ•°åŠŸèƒ½ã€‘ å­˜å‚¨ä¿¡æ¯åˆ°æŒ‡å®šæ–‡ä»¶
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°FileName
+ã€è¿”å›å€¼ã€‘ æ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 void Festival::SaveToFile(const string& FileName) {
     ofstream File(FileName);
@@ -201,11 +201,11 @@ void Festival::SaveToFile(const string& FileName) {
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ LoadFromFile¡¾º¯Êı¹¦ÄÜ¡¿ ¶ÁÈ¡Ö¸¶¨ÎÄ¼şÄÚÈİ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıFileName
-¡¾·µ»ØÖµ¡¿ ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ LoadFromFileã€å‡½æ•°åŠŸèƒ½ã€‘ è¯»å–æŒ‡å®šæ–‡ä»¶å†…å®¹
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°FileName
+ã€è¿”å›å€¼ã€‘ æ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 void Festival::LoadFromFile(const string& FileName) {
     ifstream File(FileName);

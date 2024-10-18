@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼þÃû¡¿ Month.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤MonthÀà£¬¼¯ÖÐ±àÐ´MonthÀà³ÉÔ±º¯ÊýµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€æ–‡ä»¶åã€‘ Month.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤Monthç±»ï¼Œé›†ä¸­ç¼–å†™Monthç±»æˆå‘˜å‡½æ•°çš„å£°æ˜Žã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #ifndef Month_hpp
@@ -15,92 +15,92 @@ using std::exception;
 using std::invalid_argument;
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ Month
-¡¾¹¦ÄÜ¡¿ ÔÂ·Ý¹ÜÀí£¬°üº¬Öµ¡¢³¤¶ÌÃû³Æ¡£
-¡¾½Ó¿ÚËµÃ÷¡¿ 6¸ögetterÓÃÀ´»ñÈ¡Êý¾Ý£¬5¸ösetterÓÃÀ´ÐÞ¸Ä³ÉÔ±Êý¾Ý£¬4¸öIsValidÅÐ¶ÏºÏ·¨ÐÔ¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€ç±»åã€‘ Month
+ã€åŠŸèƒ½ã€‘ æœˆä»½ç®¡ç†ï¼ŒåŒ…å«å€¼ã€é•¿çŸ­åç§°ã€‚
+ã€æŽ¥å£è¯´æ˜Žã€‘ 6ä¸ªgetterç”¨æ¥èŽ·å–æ•°æ®ï¼Œ5ä¸ªsetterç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®ï¼Œ4ä¸ªIsValidåˆ¤æ–­åˆæ³•æ€§ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class Month {
 public:
-    //Å×³öÔÂ·ÝÒì³£Àà
+    //æŠ›å‡ºæœˆä»½å¼‚å¸¸ç±»
     class ExecptionWrongValue : public invalid_argument {
     public:
         ExecptionWrongValue();
     };
-    //ÔÂ·ÝÖµÀàÐÍ
+    //æœˆä»½å€¼ç±»åž‹
     enum class ValueType : unsigned int {
         JAN = 1, FEB = 2, MAR = 3, APR = 4, MAY = 5, JUN = 6
         , JUL = 7, AUG = 8, SEP = 9, OCT = 10, NOV = 11, DEC = 12
     };
-    //ÔÂ·ÝÃû³ÆÀàÐÍ
+    //æœˆä»½åç§°ç±»åž‹
     enum class NameType : unsigned int {
         SHORT = 0, FULL = 1
     };
-    //´ø²ÎÊýµÄ¹¹Ôìº¯Êý
+    //å¸¦å‚æ•°çš„æž„é€ å‡½æ•°
     Month(const ValueType& Value);
     Month(const unsigned int& uValue);
-    //Ä¬ÈÏ¹¹Ôìº¯Êý
+    //é»˜è®¤æž„é€ å‡½æ•°
     Month() = default;
-    //¿½±´¹¹Ôìº¯Êý
+    //æ‹·è´æž„é€ å‡½æ•°
     Month(const Month&) = default;
-    //Ä¬ÈÏ¸³ÖµÔËËã·û
+    //é»˜è®¤èµ‹å€¼è¿ç®—ç¬¦
     Month& operator=(const Month&) = default;
-    //Îö¹¹º¯Êý
+    //æžæž„å‡½æ•°
     ~Month() = default;
 
-    //¸³ÖµÔËËã·û
+    //èµ‹å€¼è¿ç®—ç¬¦
     Month& operator= (const ValueType& Value);
     Month& operator= (const unsigned int& uValue);
 
-    //ÉèÖÃÔÂ·Ý
+    //è®¾ç½®æœˆä»½
     void Set(const ValueType& Value);
     void Set(const unsigned int& Value);
-    //»ñµÃÔÂ·ÝµÄÖµ
+    //èŽ·å¾—æœˆä»½çš„å€¼
     unsigned int GetValue() const;
 
-    //==ÔËËã·û
+    //==è¿ç®—ç¬¦
     bool        operator==(const Month& Source) const;
     bool        operator==(const ValueType& Source) const;
     friend bool operator==(const Month::ValueType& Value, const Month& Month);
-    //!=ÔËËã·û
+    //!=è¿ç®—ç¬¦
     bool        operator!=(const Month& Source) const;
     bool        operator!=(const ValueType& Source) const;
     friend bool operator!=(const Month::ValueType& Value, const Month& Month);
-    //>ÔËËã·û
+    //>è¿ç®—ç¬¦
     bool        operator> (const Month& Source) const;
     bool        operator> (const ValueType& Source) const;
     friend bool operator> (const Month::ValueType& Value, const Month& Month);
-    //>=ÔËËã·û
+    //>=è¿ç®—ç¬¦
     bool        operator>=(const Month& Source) const;
     bool        operator>=(const ValueType& Source) const;
     friend bool operator>=(const Month::ValueType& Value, const Month& Month);
-    //<ÔËËã·û
+    //<è¿ç®—ç¬¦
     bool        operator< (const Month& Source) const;
     bool        operator< (const ValueType& Source) const;
     friend bool operator< (const Month::ValueType& Value, const Month& Month);
-    //<=ÔËËã·û
+    //<=è¿ç®—ç¬¦
     bool        operator<=(const Month& Source) const;
     bool        operator<=(const ValueType& Source) const;
     friend bool operator<=(const Month::ValueType& Value, const Month& Month);
-    //++ÔËËã·û
+    //++è¿ç®—ç¬¦
     Month& operator++();
     Month  operator++(int);
-    //--ÔËËã·û
+    //--è¿ç®—ç¬¦
     Month& operator--();
     Month  operator--(int);
 
-    //×ª»»³É×Ö·û´®
+    //è½¬æ¢æˆå­—ç¬¦ä¸²
     static string ToName(const Month& Source
         , const NameType& Type = NameType::SHORT);
-    //×ª»»³É×Ö·û´®
+    //è½¬æ¢æˆå­—ç¬¦ä¸²
     static string ToName(const ValueType& Source
         , const NameType& Type = NameType::SHORT);
-    //×ª»»³É×Ö·û´®
+    //è½¬æ¢æˆå­—ç¬¦ä¸²
     string ToName(const NameType& Type = NameType::SHORT) const;
     unsigned int operator()() const;
 
-    //µÃµ½ÔÂ·Ý×î´óÈÕ
+    //å¾—åˆ°æœˆä»½æœ€å¤§æ—¥
     unsigned int GetMaxDaysOfMonths() const;
     static unsigned int GetMaxDaysOfMonths(const unsigned int& Month);
     static unsigned int GetMaxDaysOfMonths(const Month& Month);

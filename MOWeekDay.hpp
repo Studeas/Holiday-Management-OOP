@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ MOWeekDay.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤MOWeekDayÀà£¬¼¯ÖĞ±àĞ´MOWeekDayÀà³ÉÔ±º¯ÊıµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ MOWeekDay.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤MOWeekDayç±»ï¼Œé›†ä¸­ç¼–å†™MOWeekDayç±»æˆå‘˜å‡½æ•°çš„å£°æ˜ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 #ifndef MOWeekDay_hpp
 #define MOWeekDay_hpp
@@ -11,17 +11,17 @@
 #include "WeekDay.hpp"
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ MOWeekDay
-¡¾¹¦ÄÜ¡¿ Ä³ÔÂµÚÄ³¸öĞÇÆÚ¼¸£¬ÒÔÕâ¸ö¸ñÊ½½øĞĞÈÕÆÚ¹ÜÀí
-¡¾½Ó¿ÚËµÃ÷¡¿ 5¸ögetterÓÃÀ´»ñÈ¡Êı¾İ£¬8¸ösetterÓÃÀ´ĞŞ¸Ä³ÉÔ±Êı¾İ£¬4¸öIsValidÅĞ¶ÏºÏ·¨ĞÔ¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€ç±»åã€‘ MOWeekDay
+ã€åŠŸèƒ½ã€‘ æŸæœˆç¬¬æŸä¸ªæ˜ŸæœŸå‡ ï¼Œä»¥è¿™ä¸ªæ ¼å¼è¿›è¡Œæ—¥æœŸç®¡ç†
+ã€æ¥å£è¯´æ˜ã€‘ 5ä¸ªgetterç”¨æ¥è·å–æ•°æ®ï¼Œ8ä¸ªsetterç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®ï¼Œ4ä¸ªIsValidåˆ¤æ–­åˆæ³•æ€§ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class MOWeekDay {
 public:
-	//É¾³ıÄ¬ÈÏ¹¹Ôìº¯Êı
+	//åˆ é™¤é»˜è®¤æ„é€ å‡½æ•°
 	MOWeekDay() = delete;
-	//ÆäËû¹¹Ôìº¯Êı
+	//å…¶ä»–æ„é€ å‡½æ•°
 	MOWeekDay(const Month& Month
 			, const unsigned int& uOrdial
 			, const WeekDay& WeekDay);
@@ -32,12 +32,12 @@ public:
 			, const unsigned int& uOrdial
 			, const unsigned int& uActualWeekDayValue);
 	MOWeekDay(const MOWeekDay& Source);
-	//Ä¬ÈÏÎö¹¹º¯Êı
+	//é»˜è®¤ææ„å‡½æ•°
 	~MOWeekDay() = default;
-	//¸³ÖµÔËËã·û
+	//èµ‹å€¼è¿ç®—ç¬¦
 	MOWeekDay& operator=(const MOWeekDay& Source);
 
-	//ÉèÖÃMOW
+	//è®¾ç½®MOW
 	void Set(const Month& Month
 		   , const unsigned int& uOrdial
 		   , const WeekDay& WeekDay);
@@ -47,16 +47,16 @@ public:
 	void Set(const Month& Month
 		   , const unsigned int& uOrdial
 		   , const unsigned int& uctualWeekDayValue);
-	//ÉèÖÃÔÂ
+	//è®¾ç½®æœˆ
 	void SetMonth(const unsigned int& uMonth);
 	void SetMonth(const Month& Month);
-	//ÉèÖÃµÚÄ³¸ö
+	//è®¾ç½®ç¬¬æŸä¸ª
 	void SetOrdial(const unsigned int& uOrdial);
-	//ÉèÖÃĞÇÆÚ¼¸
+	//è®¾ç½®æ˜ŸæœŸå‡ 
 	void SetWeekDay(const WeekDay& WeekDay);
 	void SetWeekDay(const unsigned int& uActualWeekDayValue);
 
-	//ÅĞ¶ÏÈÕÆÚÊÇ·ñºÏ·¨
+	//åˆ¤æ–­æ—¥æœŸæ˜¯å¦åˆæ³•
 	static bool IsValidMOWeekDay(const Month& Month
 								, const unsigned int& uOrdial
 								, const WeekDay& WeekDay);
@@ -68,15 +68,15 @@ public:
 								, const unsigned int& uActualWeekDayValue);
 	bool IsValidMOWeekDay() const;
 
-	//»ñÈ¡ÔÂ
+	//è·å–æœˆ
 	Month GetMonth() const;
-	//»ñÈ¡ÔÂµÄÖµ
+	//è·å–æœˆçš„å€¼
 	unsigned int GetMonthValue() const;
-	//»ñÈ¡µÚÄ³¸ö
+	//è·å–ç¬¬æŸä¸ª
 	unsigned int GetOrdial() const;
-	//»ñÈ¡ĞÇÆÚ¼¸
+	//è·å–æ˜ŸæœŸå‡ 
 	WeekDay GetWeekDay() const;
-	//»ñÈ¡ĞÇÆÚ¼¸µÄÖµ
+	//è·å–æ˜ŸæœŸå‡ çš„å€¼
 	unsigned int GetWeekDayActualValue() const;
 
 	 

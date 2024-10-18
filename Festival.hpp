@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ Festival.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤FestivalÀà£¬¼¯ÖĞ±àĞ´FestivalÀà³ÉÔ±º¯ÊıµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ Festival.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤Festivalç±»ï¼Œé›†ä¸­ç¼–å†™Festivalç±»æˆå‘˜å‡½æ•°çš„å£°æ˜ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #ifndef Festival_hpp
@@ -18,11 +18,11 @@
 using namespace std;
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ FestivalType
-¡¾¹¦ÄÜ¡¿ Ã¶¾ÙÀàĞÍ£¬Ìá¹©FestivalType³ÉÔ±º¯ÊıµÄ·µ»ØÖµ¡£
-¡¾½Ó¿ÚËµÃ÷¡¿ ²»Ìá¹©½Ó¿Ú£¬Ö»Î¬»¤³ÉÔ±¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€ç±»åã€‘ FestivalType
+ã€åŠŸèƒ½ã€‘ æšä¸¾ç±»å‹ï¼Œæä¾›FestivalTypeæˆå‘˜å‡½æ•°çš„è¿”å›å€¼ã€‚
+ã€æ¥å£è¯´æ˜ã€‘ ä¸æä¾›æ¥å£ï¼Œåªç»´æŠ¤æˆå‘˜ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 enum class FestivalType {
 	REGULAR_DATE,
@@ -31,31 +31,31 @@ enum class FestivalType {
 };
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ Festival
-¡¾¹¦ÄÜ¡¿ ³éÏóÀà£¬´æ´¢½ÚÈÕÃû£»¶ÁÈ¡¡¢´æ´¢ÎÄ¼ş£»Ìá¹©ĞŞ¸Ä¡¢²éÕÒµÈ¹¦ÄÜµÄº¯ÊıÊµÏÖ¡£
-¡¾½Ó¿ÚËµÃ÷¡¿ DelÉ¾³ı½ÚÈÕ£¬5¸ögetterÓÃÀ´»ñÈ¡Êı¾İ£¬4¸öModifyÓÃÀ´ĞŞ¸Ä³ÉÔ±Êı¾İ
-			£¬SearchFestivalByNameÓÃÀ´²éÕÒ¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€ç±»åã€‘ Festival
+ã€åŠŸèƒ½ã€‘ æŠ½è±¡ç±»ï¼Œå­˜å‚¨èŠ‚æ—¥åï¼›è¯»å–ã€å­˜å‚¨æ–‡ä»¶ï¼›æä¾›ä¿®æ”¹ã€æŸ¥æ‰¾ç­‰åŠŸèƒ½çš„å‡½æ•°å®ç°ã€‚
+ã€æ¥å£è¯´æ˜ã€‘ Delåˆ é™¤èŠ‚æ—¥ï¼Œ5ä¸ªgetterç”¨æ¥è·å–æ•°æ®ï¼Œ4ä¸ªModifyç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®
+			ï¼ŒSearchFestivalByNameç”¨æ¥æŸ¥æ‰¾ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class Festival {
 public:
-	//É¾³ıÖ¸¶¨Ãû³ÆµÄ½ÚÈÕ
+	//åˆ é™¤æŒ‡å®šåç§°çš„èŠ‚æ—¥
 	static bool Del(const string& sName);
 
-	//É¾³ıÄ¬ÈÏ¹¹Ôìº¯Êı¡¢¿½±´¹¹Ôìº¯ÊıºÍ¸³ÖµÔËËã·û
+	//åˆ é™¤é»˜è®¤æ„é€ å‡½æ•°ã€æ‹·è´æ„é€ å‡½æ•°å’Œèµ‹å€¼è¿ç®—ç¬¦
 	Festival(const char*) = delete;
 	Festival() = delete;
 	Festival(const Festival& Source) = delete;
 	Festival& operator=(const Festival& Source) = delete;
 
-	//»ñµÃ½ÚÈÕÃû³Æ
+	//è·å¾—èŠ‚æ—¥åç§°
 	string GetFestivalName() const;
 
-	//ĞŞ¸Ä½ÚÈÕÃû³Æ
+	//ä¿®æ”¹èŠ‚æ—¥åç§°
 	bool ModifyName(const string& sOldName, const string& sNewName);
 
-	//ĞŞ¸Ä½ÚÈÕÊ±¼ä£¬´¿Ğéº¯Êı
+	//ä¿®æ”¹èŠ‚æ—¥æ—¶é—´ï¼Œçº¯è™šå‡½æ•°
 	virtual bool ModifyMOWeekDay(const unsigned int& uMonth
 								, const unsigned int& uOrdial
 								, const unsigned int& uWeekDay) = 0;
@@ -65,19 +65,19 @@ public:
 							, const unsigned int& uMonth
 							, const unsigned int& uDay) = 0;
 		
-	//»ñµÃ½ÚÈÕÊ±¼äĞÅÏ¢£¬´¿Ğéº¯Êı
+	//è·å¾—èŠ‚æ—¥æ—¶é—´ä¿¡æ¯ï¼Œçº¯è™šå‡½æ•°
 	virtual YMDDate GetYMDDate() const = 0;
 	virtual MDDate GetMDDate() const = 0;
 	virtual MOWeekDay GetMOWeekDay() const = 0;
 	virtual FestivalType GetType() const = 0;
 
-	//°´ÕÕÃû³ÆËÑË÷½ÚÈÕ
+	//æŒ‰ç…§åç§°æœç´¢èŠ‚æ—¥
 	static Festival* SearchFestivalByName(const string& sTargetName);
 	
-	//ÄÚÇ¶Àà£¬´æ´¢Ä³ÄêµÄ½ÚÈÕĞÅÏ¢£¨°üº¬Ãû³Æ¡¢Ê±¼äĞÅÏ¢£©£¬±ãÓÚÊµÏÖ²éÕÒ´òÓ¡¹¦ÄÜ
+	//å†…åµŒç±»ï¼Œå­˜å‚¨æŸå¹´çš„èŠ‚æ—¥ä¿¡æ¯ï¼ˆåŒ…å«åç§°ã€æ—¶é—´ä¿¡æ¯ï¼‰ï¼Œä¾¿äºå®ç°æŸ¥æ‰¾æ‰“å°åŠŸèƒ½
 	class FestivalInThisYear {
 	public:
-		//´ø²ÎÊıµÄ¹¹Ôìº¯Êı
+		//å¸¦å‚æ•°çš„æ„é€ å‡½æ•°
 		FestivalInThisYear(const string& sName
 						, const YMDDate& YMDDate
 						, const unsigned int& uDaysInTotal);
@@ -86,33 +86,33 @@ public:
 		unsigned int m_DaysInTotal;
 	};
 
-	//¾²Ì¬³ÉÔ±º¯Êı£¬²éÕÒÄ³ÄêÖĞµÄËùÓĞ½ÚÈÕ
+	//é™æ€æˆå‘˜å‡½æ•°ï¼ŒæŸ¥æ‰¾æŸå¹´ä¸­çš„æ‰€æœ‰èŠ‚æ—¥
 	static vector<FestivalInThisYear*> 
 		GetFestivalInThisYearList(const unsigned int& uYear);
 
-	//±£´æÖÁÖ¸¶¨ÎÄ¼ş
+	//ä¿å­˜è‡³æŒ‡å®šæ–‡ä»¶
 	static void SaveToFile(const string& FileName);
-	//¶ÁÈ¡Ö¸¶¨ÎÄ¼ş
+	//è¯»å–æŒ‡å®šæ–‡ä»¶
 	static void LoadFromFile(const string& FileName);
 
-	//½ÚÈÕÃû³ÆµÄ³£ÒıÓÃ
+	//èŠ‚æ—¥åç§°çš„å¸¸å¼•ç”¨
 	const string& Name;
 
 protected:
-	//´ø²ÎÊıµÄ¹¹Ôìº¯Êı
+	//å¸¦å‚æ•°çš„æ„é€ å‡½æ•°
 	Festival(const string& sName);
 
-	//ÊÜ±£»¤µÄÊı¾İ³ÉÔ±£¬´æ´¢ËùÓĞ½ÚÈÕµÄÖ¸Õë
+	//å—ä¿æŠ¤çš„æ•°æ®æˆå‘˜ï¼Œå­˜å‚¨æ‰€æœ‰èŠ‚æ—¥çš„æŒ‡é’ˆ
 	static vector<Festival*> m_All;
 	
 private:
-	//³ÌĞò½áÊøµÄÊ±ºòGarboÀà»áµ÷ÓÃÕâ¸öº¯Êı
+	//ç¨‹åºç»“æŸçš„æ—¶å€™Garboç±»ä¼šè°ƒç”¨è¿™ä¸ªå‡½æ•°
 	static void Clear();
 	
-	//Ë½ÓĞÊı¾İ³ÉÔ±£¬½ÚÈÕÃû³Æ
+	//ç§æœ‰æ•°æ®æˆå‘˜ï¼ŒèŠ‚æ—¥åç§°
 	string m_Name;
 
-	//ÄÚÇ¶Àà£¬³ÌĞò½áÊøµÄÊ±ºòÓÃÒÔÏú»Ù¶¯Ì¬ÄÚ´æ£¬·ÀÖ¹ÄÚ´æĞ¹Â©
+	//å†…åµŒç±»ï¼Œç¨‹åºç»“æŸçš„æ—¶å€™ç”¨ä»¥é”€æ¯åŠ¨æ€å†…å­˜ï¼Œé˜²æ­¢å†…å­˜æ³„æ¼
 	class Garbo {
 	public:
 		~Garbo() {

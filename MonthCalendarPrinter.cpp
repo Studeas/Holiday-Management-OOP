@@ -1,24 +1,24 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ MonthCalendarPrinter.cpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤MonthCalendarPrinterÀà£¬¼¯ÖĞ±àĞ´MonthCalendarPrinterÀà
-			     ³ÉÔ±º¯ÊıµÄ¶¨Òå¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ MonthCalendarPrinter.cpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤MonthCalendarPrinterç±»ï¼Œé›†ä¸­ç¼–å†™MonthCalendarPrinterç±»
+			     æˆå‘˜å‡½æ•°çš„å®šä¹‰ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 #include "MonthCalendarPrinter.hpp"
 using namespace std;
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ MonthCalendarPrinter¡¾º¯Êı¹¦ÄÜ¡¿ ¹¹Ôìº¯Êı
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıuYear£¬ÊäÈë²ÎÊıuMonth
-¡¾·µ»ØÖµ¡¿ ¹¹Ôìº¯Êı£¬ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ MonthCalendarPrinterã€å‡½æ•°åŠŸèƒ½ã€‘ æ„é€ å‡½æ•°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°uYearï¼Œè¾“å…¥å‚æ•°uMonth
+ã€è¿”å›å€¼ã€‘ æ„é€ å‡½æ•°ï¼Œæ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 MonthCalendarPrinter::MonthCalendarPrinter(const unsigned int& uYear
 											, const unsigned int& uMonth) {
 	if (uYear < 1900 || uYear>9999) {
-		throw invalid_argument("Äê·İ³¬ÏŞ");
+		throw invalid_argument("å¹´ä»½è¶…é™");
 	}
 	Month::Month(uMonth);
 	m_Year = uYear;
@@ -26,11 +26,11 @@ MonthCalendarPrinter::MonthCalendarPrinter(const unsigned int& uYear
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ PrintCalendar¡¾º¯Êı¹¦ÄÜ¡¿ ´òÓ¡ÔÂÀú
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıuYear£¬ÊäÈë²ÎÊıuMonth
-¡¾·µ»ØÖµ¡¿ ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ PrintCalendarã€å‡½æ•°åŠŸèƒ½ã€‘ æ‰“å°æœˆå†
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°uYearï¼Œè¾“å…¥å‚æ•°uMonth
+ã€è¿”å›å€¼ã€‘ æ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 void MonthCalendarPrinter::PrintCalendar(const unsigned int& uYear
 										, const unsigned int& uMonth) const{
@@ -42,7 +42,7 @@ void MonthCalendarPrinter::PrintCalendar(const unsigned int& uYear
 		DaysInTotal -= 1;
 	}
 
-	//´òÓ¡±íÍ·
+	//æ‰“å°è¡¨å¤´
 	cout << "Calendar of " << Month::Month(uMonth).ToName(Month::NameType::FULL) 
 		 << ", " << uYear << "." << endl << endl;
 	cout << "=========================================================" << endl;
@@ -50,7 +50,7 @@ void MonthCalendarPrinter::PrintCalendar(const unsigned int& uYear
 		 << "  Sat  |" << "  Sun  |" << endl;
 	cout << "=========================================================" << endl;
 
-	//ÖğĞĞ´òÓ¡
+	//é€è¡Œæ‰“å°
 	unsigned int MonthDaysPrint[42]{ 0 };
 	unsigned int DayValue = 1;
 	for (unsigned int DayPosi = FirstDayWeekDay - 1
@@ -80,11 +80,11 @@ void MonthCalendarPrinter::PrintCalendar(const unsigned int& uYear
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ CmpByDate¡¾º¯Êı¹¦ÄÜ¡¿ ÅÅĞò½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıa£¬ÊäÈë²ÎÊıb
-¡¾·µ»ØÖµ¡¿ bool£¬aÈÕÆÚĞ¡ÓÚbÔòÎªtrue
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ CmpByDateã€å‡½æ•°åŠŸèƒ½ã€‘ æ’åºèŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°aï¼Œè¾“å…¥å‚æ•°b
+ã€è¿”å›å€¼ã€‘ boolï¼Œaæ—¥æœŸå°äºbåˆ™ä¸ºtrue
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 bool MonthCalendarPrinter::CmpByDate(Festival::FestivalInThisYear* a
 									, Festival::FestivalInThisYear* b) {
@@ -92,11 +92,11 @@ bool MonthCalendarPrinter::CmpByDate(Festival::FestivalInThisYear* a
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ PrintFestivals¡¾º¯Êı¹¦ÄÜ¡¿ ´òÓ¡½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıuYear£¬ÊäÈë²ÎÊıuMonth
-¡¾·µ»ØÖµ¡¿ ÎŞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ PrintFestivalsã€å‡½æ•°åŠŸèƒ½ã€‘ æ‰“å°èŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°uYearï¼Œè¾“å…¥å‚æ•°uMonth
+ã€è¿”å›å€¼ã€‘ æ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 void MonthCalendarPrinter::PrintFestivals(const unsigned int& uYear
 										, const unsigned int& uMonth) const{
@@ -111,12 +111,12 @@ void MonthCalendarPrinter::PrintFestivals(const unsigned int& uYear
 	
 	sort(ThisYearFestivals.begin(), ThisYearFestivals.end(), CmpByDate);
 
-	//´òÓ¡ÌáÊ¾Óï
+	//æ‰“å°æç¤ºè¯­
 	cout << "Festivals in " 
 		 << Month::Month(uMonth).ToName(Month::NameType::FULL) 
 		 << ", " << uYear << "." << endl << endl;
 
-	//´òÓ¡½ÚÈÕ
+	//æ‰“å°èŠ‚æ—¥
 	for (auto& n : ThisYearFestivals) {
 		if (n->m_DaysInTotal >= YMDDate(uYear, uMonth, 1).DaysPassedInTotal()
 			&& n->m_DaysInTotal 

@@ -1,19 +1,19 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ Controller.cpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤ControllerÀà£¬¼¯ÖĞ±àĞ´ControllerÀà³ÉÔ±º¯ÊıµÄ¶¨Òå¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ Controller.cpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤Controllerç±»ï¼Œé›†ä¸­ç¼–å†™Controllerç±»æˆå‘˜å‡½æ•°çš„å®šä¹‰ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #include "Controller.hpp"
 #include <iomanip>
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ Controller¡¾º¯Êı¹¦ÄÜ¡¿ ¹¹Ôìº¯Êı
-¡¾²ÎÊı¡¿ const string& FestivalsFileName£¬ÊäÈë²ÎÊı£¬ÎÄ¼şÃû£¬ÓÃÀ´¹¹Ôìctr¶ÔÏó¡£
-¡¾·µ»ØÖµ¡¿ ¹¹Ôìº¯Êı
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ Controllerã€å‡½æ•°åŠŸèƒ½ã€‘ æ„é€ å‡½æ•°
+ã€å‚æ•°ã€‘ const string& FestivalsFileNameï¼Œè¾“å…¥å‚æ•°ï¼Œæ–‡ä»¶åï¼Œç”¨æ¥æ„é€ ctrå¯¹è±¡ã€‚
+ã€è¿”å›å€¼ã€‘ æ„é€ å‡½æ•°
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 Controller::Controller(const string& sFestivalsFileName) {
 	m_sFestivalsFileName = sFestivalsFileName;
@@ -21,23 +21,23 @@ Controller::Controller(const string& sFestivalsFileName) {
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ ~Controller¡¾º¯Êı¹¦ÄÜ¡¿ Îö¹¹º¯Êı
-¡¾²ÎÊı¡¿ ÎŞ
-¡¾·µ»ØÖµ¡¿ Îö¹¹º¯Êı
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ ~Controllerã€å‡½æ•°åŠŸèƒ½ã€‘ ææ„å‡½æ•°
+ã€å‚æ•°ã€‘ æ— 
+ã€è¿”å›å€¼ã€‘ ææ„å‡½æ•°
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 Controller::~Controller() {
 	Festival::SaveToFile(m_sFestivalsFileName);
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ AddFestival¡¾º¯Êı¹¦ÄÜ¡¿ ÈıÖÖÀàĞÍÍ¨ÓÃµÄ½ÚÈÕÌí¼Óº¯Êı
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıUsersChoice£¬ÊäÈë²ÎÊısFestivalName£¬ÊäÈë²ÎÊıuTimeNum1
-		£¬ÊäÈë²ÎÊıuTimeNum1£¬ÊäÈë²ÎÊıuTimeNum3
-¡¾·µ»ØÖµ¡¿ RES::ADDFESTIVAL_OK£¬±íÊ¾Ìí¼Ó³É¹¦
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ AddFestivalã€å‡½æ•°åŠŸèƒ½ã€‘ ä¸‰ç§ç±»å‹é€šç”¨çš„èŠ‚æ—¥æ·»åŠ å‡½æ•°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°UsersChoiceï¼Œè¾“å…¥å‚æ•°sFestivalNameï¼Œè¾“å…¥å‚æ•°uTimeNum1
+		ï¼Œè¾“å…¥å‚æ•°uTimeNum1ï¼Œè¾“å…¥å‚æ•°uTimeNum3
+ã€è¿”å›å€¼ã€‘ RES::ADDFESTIVAL_OKï¼Œè¡¨ç¤ºæ·»åŠ æˆåŠŸ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::AddFestival(const FestivalType& UsersChoice, 
 	                        const string& sFestivalName,
@@ -45,26 +45,26 @@ RES Controller::AddFestival(const FestivalType& UsersChoice,
 	                        const unsigned int& uTimeNum2, 
 	                        const unsigned int& uTimeNum3) const {
 	try {
-		//Ìí¼ÓREGULAR_DATEÀàĞÍµÄ½ÚÈÕ
+		//æ·»åŠ REGULAR_DATEç±»å‹çš„èŠ‚æ—¥
 		if (UsersChoice == FestivalType::REGULAR_DATE) {
 			RegularDateFestival::Add(sFestivalName
 				, MDDate(uTimeNum1, uTimeNum2));
 			return RES::ADDFESTIVAL_OK;
-			cout << "Ìí¼Ó³É¹¦£¡" << endl;
+			cout << "æ·»åŠ æˆåŠŸï¼" << endl;
 		}
-		//Ìí¼ÓREGULAR_WEEKDAYÀàĞÍµÄ½ÚÈÕ
+		//æ·»åŠ REGULAR_WEEKDAYç±»å‹çš„èŠ‚æ—¥
 		if (UsersChoice == FestivalType::REGULAR_WEEKDAY) {
 			RegularWeekDayFestival::Add(sFestivalName
 				, MOWeekDay(uTimeNum1, uTimeNum2, uTimeNum3));
 			return RES::ADDFESTIVAL_OK;
-			cout << "Ìí¼Ó³É¹¦£¡" << endl;
+			cout << "æ·»åŠ æˆåŠŸï¼" << endl;
 		}
-		//Ìí¼ÓSPECIAL_DATEÀàĞÍµÄ½ÚÈÕ
+		//æ·»åŠ SPECIAL_DATEç±»å‹çš„èŠ‚æ—¥
 		if (UsersChoice == FestivalType::SPECIAL_DATE) {
 			SpecialDateFestival::Add(sFestivalName
 				, YMDDate(uTimeNum1, uTimeNum2, uTimeNum3));
 			return RES::ADDFESTIVAL_OK;
-			cout << "Ìí¼Ó³É¹¦£¡" << endl;
+			cout << "æ·»åŠ æˆåŠŸï¼" << endl;
 		}
 	}
 	catch (invalid_argument e) {
@@ -74,16 +74,16 @@ RES Controller::AddFestival(const FestivalType& UsersChoice,
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ DelFestival¡¾º¯Êı¹¦ÄÜ¡¿ É¾³ı½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısFestivalName
-¡¾·µ»ØÖµ¡¿ RES::DELETE_OK£¬Ìí¼Ó³É¹¦
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ DelFestivalã€å‡½æ•°åŠŸèƒ½ã€‘ åˆ é™¤èŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sFestivalName
+ã€è¿”å›å€¼ã€‘ RES::DELETE_OKï¼Œæ·»åŠ æˆåŠŸ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::DelFestival(const string& sFestivalName) const{
 	try {
 		Festival::Del(sFestivalName);
-		cout << "É¾³ı³É¹¦£¡" << endl;
+		cout << "åˆ é™¤æˆåŠŸï¼" << endl;
 		return RES::DELETE_OK;
 	}
 	catch (invalid_argument e) {
@@ -93,17 +93,17 @@ RES Controller::DelFestival(const string& sFestivalName) const{
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ ModifyFestivalName¡¾º¯Êı¹¦ÄÜ¡¿ ĞŞ¸Ä½ÚÈÕÃû³Æ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısFestivalName£¬ÊäÈë²ÎÊısNewName
-¡¾·µ»ØÖµ¡¿ RES::MODIFYNAME_OK£¬Ãû³ÆĞŞ¸Ä³É¹¦
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ ModifyFestivalNameã€å‡½æ•°åŠŸèƒ½ã€‘ ä¿®æ”¹èŠ‚æ—¥åç§°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sFestivalNameï¼Œè¾“å…¥å‚æ•°sNewName
+ã€è¿”å›å€¼ã€‘ RES::MODIFYNAME_OKï¼Œåç§°ä¿®æ”¹æˆåŠŸ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::ModifyFestivalName(const string& sFestivalName, 
 	                               const string& sNewName) const {
 	try {
 		Festival::SearchFestivalByName(sFestivalName)->ModifyName(sFestivalName, sNewName);
-		cout << "ĞŞ¸Ä³É¹¦£¡" << endl;
+		cout << "ä¿®æ”¹æˆåŠŸï¼" << endl;
 		return RES::MODIFYNAME_OK;
 	}
 	catch (invalid_argument e) {
@@ -114,12 +114,12 @@ RES Controller::ModifyFestivalName(const string& sFestivalName,
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ ModifyFestivalTime¡¾º¯Êı¹¦ÄÜ¡¿ ĞŞ¸Ä½ÚÈÕÊ±¼ä
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıResFestivalType£¬ÊäÈë²ÎÊısFestivalName£¬ÊäÈë²ÎÊıuTimeNum1
-		£¬ÊäÈë²ÎÊıuTimeNum1£¬ÊäÈë²ÎÊıuTimeNum3
-¡¾·µ»ØÖµ¡¿ RES::MODIFYTIME_OK£¬ĞŞ¸ÄÊ±¼ä³É¹¦
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ ModifyFestivalTimeã€å‡½æ•°åŠŸèƒ½ã€‘ ä¿®æ”¹èŠ‚æ—¥æ—¶é—´
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°ResFestivalTypeï¼Œè¾“å…¥å‚æ•°sFestivalNameï¼Œè¾“å…¥å‚æ•°uTimeNum1
+		ï¼Œè¾“å…¥å‚æ•°uTimeNum1ï¼Œè¾“å…¥å‚æ•°uTimeNum3
+ã€è¿”å›å€¼ã€‘ RES::MODIFYTIME_OKï¼Œä¿®æ”¹æ—¶é—´æˆåŠŸ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::ModifyFestivalTime(const FestivalType& ResFestivalType, 
 	                               const string& sFestivalName,
@@ -127,24 +127,24 @@ RES Controller::ModifyFestivalTime(const FestivalType& ResFestivalType,
 	                               const unsigned int& uTimeNum2, 
 	                               const unsigned int& uTimeNum3) const {
 	try {
-		//µÃµ½²éÑ¯½á¹ûµÄÖ¸Õë
+		//å¾—åˆ°æŸ¥è¯¢ç»“æœçš„æŒ‡é’ˆ
 		Festival* pMyFestival = Festival::SearchFestivalByName(sFestivalName);
-		//ĞŞ¸ÄREGULAR_DATEÀàĞÍµÄ½ÚÈÕ
+		//ä¿®æ”¹REGULAR_DATEç±»å‹çš„èŠ‚æ—¥
 		if (ResFestivalType == FestivalType::REGULAR_DATE) {
 			pMyFestival->ModifyMDDate(uTimeNum1, uTimeNum2);
-			cout << "ĞŞ¸Ä³É¹¦£¡" << endl;
+			cout << "ä¿®æ”¹æˆåŠŸï¼" << endl;
 			return RES::MODIFYTIME_OK;
 		}
-		//ĞŞ¸ÄREGULAR_WEEKDAYÀàĞÍµÄ½ÚÈÕ
+		//ä¿®æ”¹REGULAR_WEEKDAYç±»å‹çš„èŠ‚æ—¥
 		if (ResFestivalType == FestivalType::REGULAR_WEEKDAY) {
 			pMyFestival->ModifyMOWeekDay(uTimeNum1, uTimeNum2, uTimeNum3);
-			cout << "ĞŞ¸Ä³É¹¦£¡" << endl;
+			cout << "ä¿®æ”¹æˆåŠŸï¼" << endl;
 			return RES::MODIFYTIME_OK;
 		}
-		//ĞŞ¸ÄSPECIAL_DATEÀàĞÍµÄ½ÚÈÕ
+		//ä¿®æ”¹SPECIAL_DATEç±»å‹çš„èŠ‚æ—¥
 		if (ResFestivalType == FestivalType::SPECIAL_DATE) {
 			pMyFestival->ModifyYMDDate(uTimeNum1, uTimeNum2, uTimeNum3);
-			cout << "ĞŞ¸Ä³É¹¦£¡" << endl;
+			cout << "ä¿®æ”¹æˆåŠŸï¼" << endl;
 			return RES::MODIFYTIME_OK;
 		}
 	}
@@ -155,23 +155,23 @@ RES Controller::ModifyFestivalTime(const FestivalType& ResFestivalType,
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ MonthCalendar¡¾º¯Êı¹¦ÄÜ¡¿ Ö¸¶¨¡°Ä³ÄêÄ³ÔÂ¡±£¬´òÓ¡µ±ÔÂÔÂÀúºÍ½ÚÈÕµÄº¯Êı
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıuYear£¬ÊäÈë²ÎÊıuMonth
-¡¾·µ»ØÖµ¡¿ RES::MONCALPRINT_OK£¬ÈÕÀúÉú³É³É¹¦
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ MonthCalendarã€å‡½æ•°åŠŸèƒ½ã€‘ æŒ‡å®šâ€œæŸå¹´æŸæœˆâ€ï¼Œæ‰“å°å½“æœˆæœˆå†å’ŒèŠ‚æ—¥çš„å‡½æ•°
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°uYearï¼Œè¾“å…¥å‚æ•°uMonth
+ã€è¿”å›å€¼ã€‘ RES::MONCALPRINT_OKï¼Œæ—¥å†ç”ŸæˆæˆåŠŸ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::MonthCalendar(const unsigned int& uYear, 
 	                          const unsigned int& uMonth) const {
 	try {
 		MonthCalendarPrinter MCP(uYear, uMonth);
-		//´òÓ¡ÔÂÀú
+		//æ‰“å°æœˆå†
 		MCP.PrintCalendar(uYear, uMonth);
 
-		//´òÓ¡½ÚÈÕ
+		//æ‰“å°èŠ‚æ—¥
 		MCP.PrintFestivals(uYear, uMonth);
 
-		cout << "´òÓ¡³É¹¦£¡" << endl;
+		cout << "æ‰“å°æˆåŠŸï¼" << endl;
 		cout << "********************************************************* "
 			<< endl << endl;
 		return RES::MONCALPRINT_OK;
@@ -183,12 +183,12 @@ RES Controller::MonthCalendar(const unsigned int& uYear,
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ SearchAndSortFestival¡¾º¯Êı¹¦ÄÜ¡¿ Ö¸¶¨¡°ÄêÔÂÈÕ¡±·¶Î§
-			£¬°´ÕÕ×Ô¶¨ÒåµÄÅÅĞò·½Ê½´òÓ¡´ËÊ±¼ä·¶Î§ÄÚµÄ½ÚÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊıYMDDate1£¬ÊäÈë²ÎÊıYMDDate2£¬ÊäÈë²ÎÊıSortType
-¡¾·µ»ØÖµ¡¿ RES::SEARCHSORT_OK£¬²éÕÒÉú³Élist³É¹¦
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ SearchAndSortFestivalã€å‡½æ•°åŠŸèƒ½ã€‘ æŒ‡å®šâ€œå¹´æœˆæ—¥â€èŒƒå›´
+			ï¼ŒæŒ‰ç…§è‡ªå®šä¹‰çš„æ’åºæ–¹å¼æ‰“å°æ­¤æ—¶é—´èŒƒå›´å†…çš„èŠ‚æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°YMDDate1ï¼Œè¾“å…¥å‚æ•°YMDDate2ï¼Œè¾“å…¥å‚æ•°SortType
+ã€è¿”å›å€¼ã€‘ RES::SEARCHSORT_OKï¼ŒæŸ¥æ‰¾ç”ŸæˆlistæˆåŠŸ
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::SearchAndSortFestival(const YMDDate& YMDDate1, 
 	                                  const YMDDate& YMDDate2, 
@@ -196,7 +196,7 @@ RES Controller::SearchAndSortFestival(const YMDDate& YMDDate1,
 	try {
 		SearchYMDRange SYMDR(YMDDate1, YMDDate2, SortType);
 
-		//²éÑ¯²¢´òÓ¡ÈÕÆÚÇø¼äÄÚµÄ½ÚÈÕ£¬°´ÕÕSortTypeµÄÅÅĞò·½Ê½
+		//æŸ¥è¯¢å¹¶æ‰“å°æ—¥æœŸåŒºé—´å†…çš„èŠ‚æ—¥ï¼ŒæŒ‰ç…§SortTypeçš„æ’åºæ–¹å¼
 		SYMDR.PrintFestivals();
 		return RES::SEARCHSORT_OK;
 	}
@@ -207,90 +207,90 @@ RES Controller::SearchAndSortFestival(const YMDDate& YMDDate1,
 }
 
 /*************************************************************************
-¡¾º¯ÊıÃû³Æ¡¿ CountDownFestival¡¾º¯Êı¹¦ÄÜ¡¿ °´Ãû³Æ²éÕÒ²¢´òÓ¡¶ÔÓ¦½ÚÈÕµÄµ¹ÊıÈÕ
-¡¾²ÎÊı¡¿ ÊäÈë²ÎÊısTargetName
-¡¾·µ»ØÖµ¡¿ RES::PAST_FESTIVAL½ÚÈÕÒÑ¹ı£¬RES::COUNTDOWN_OKµ¹ÊıÈÕÉú³É³É¹¦
-			£¬RES::INEXISTENT_NAME²»´æÔÚµÄ½ÚÈÕÃû³Æ£¬²éÕÒÊ§°Ü;
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€å‡½æ•°åç§°ã€‘ CountDownFestivalã€å‡½æ•°åŠŸèƒ½ã€‘ æŒ‰åç§°æŸ¥æ‰¾å¹¶æ‰“å°å¯¹åº”èŠ‚æ—¥çš„å€’æ•°æ—¥
+ã€å‚æ•°ã€‘ è¾“å…¥å‚æ•°sTargetName
+ã€è¿”å›å€¼ã€‘ RES::PAST_FESTIVALèŠ‚æ—¥å·²è¿‡ï¼ŒRES::COUNTDOWN_OKå€’æ•°æ—¥ç”ŸæˆæˆåŠŸ
+			ï¼ŒRES::INEXISTENT_NAMEä¸å­˜åœ¨çš„èŠ‚æ—¥åç§°ï¼ŒæŸ¥æ‰¾å¤±è´¥;
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 RES Controller::CountDownFestival(const string& sTargetName) const{
 	try{ 
-		//°´Ãû³Æ²éÕÒ½ÚÈÕºÍ½ÚÈÕÀàĞÍ
+		//æŒ‰åç§°æŸ¥æ‰¾èŠ‚æ—¥å’ŒèŠ‚æ—¥ç±»å‹
 		Festival* SearchRes = Festival::SearchFestivalByName(sTargetName); 
 		FestivalType TypeRes = SearchRes->GetType();
 
-		//´òÓ¡SPECIAL_DATEÀàĞÍµÄ½ÚÈÕµ¹ÊıÈÕ
+		//æ‰“å°SPECIAL_DATEç±»å‹çš„èŠ‚æ—¥å€’æ•°æ—¥
 		if (TypeRes == FestivalType::SPECIAL_DATE) {
-			//¸Ã½ÚÈÕµÄ×ÜÌìÊı
+			//è¯¥èŠ‚æ—¥çš„æ€»å¤©æ•°
 			unsigned int uSrchResDaysInTotal 
 				= SearchRes->GetYMDDate().DaysPassedInTotal();
-			//½ñÌìµÄ×ÜÌìÊı
+			//ä»Šå¤©çš„æ€»å¤©æ•°
 			unsigned int uTodayDaysInTotal 
 				= YMDDate::Today().DaysPassedInTotal();
 
-			//Èç¹û¸Ã½ÚÈÕ»¹Ã»¹ı£¬´òÓ¡µ¹ÊıÈÕ
+			//å¦‚æœè¯¥èŠ‚æ—¥è¿˜æ²¡è¿‡ï¼Œæ‰“å°å€’æ•°æ—¥
 			if (uSrchResDaysInTotal >= uTodayDaysInTotal) {
-				cout << SearchRes->GetFestivalName() << "½Ú¾à½ñÈÕ»¹ÓĞ"
+				cout << SearchRes->GetFestivalName() << "èŠ‚è·ä»Šæ—¥è¿˜æœ‰"
 					<< uSrchResDaysInTotal - uTodayDaysInTotal 
-					<< "Ìì¡£" << endl;
+					<< "å¤©ã€‚" << endl;
 				return RES::COUNTDOWN_OK;
 			}
-			//Èç¹û¸Ã½ÚÈÕÒÑ¹ı£¬´òÓ¡ÌáÊ¾Óï£¬½áÊø
+			//å¦‚æœè¯¥èŠ‚æ—¥å·²è¿‡ï¼Œæ‰“å°æç¤ºè¯­ï¼Œç»“æŸ
 			else {
-				cout << SearchRes->GetFestivalName() << "½ÚÒÑ¹ı¡£" << endl;
+				cout << SearchRes->GetFestivalName() << "èŠ‚å·²è¿‡ã€‚" << endl;
 				return RES::PAST_FESTIVAL;
 			}
 		}
 
-		//´òÓ¡REGULAR_DATEÀàĞÍµÄ½ÚÈÕµ¹ÊıÈÕ
+		//æ‰“å°REGULAR_DATEç±»å‹çš„èŠ‚æ—¥å€’æ•°æ—¥
 		if (TypeRes == FestivalType::REGULAR_DATE) {
-			//½ñÄêµÄ¸Ã½ÚÈÕµÄ×ÜÌìÊı
+			//ä»Šå¹´çš„è¯¥èŠ‚æ—¥çš„æ€»å¤©æ•°
 			unsigned int uSrchResThisYDaysTtl
 				= YMDDate(YMDDate::Today().GetYear()
 				, SearchRes->GetMDDate()).DaysPassedInTotal();
-			//½ñÌìµÄ×ÜÌìÊı
+			//ä»Šå¤©çš„æ€»å¤©æ•°
 			unsigned int uTodayDaysInTotal
 				= YMDDate::Today().DaysPassedInTotal();
 
-			//Èç¹û½ñÄêµÄ¸Ã½ÚÈÕ»¹Ã»¹ı£¬Ö±½Ó´òÓ¡µ¹ÊıÈÕ
+			//å¦‚æœä»Šå¹´çš„è¯¥èŠ‚æ—¥è¿˜æ²¡è¿‡ï¼Œç›´æ¥æ‰“å°å€’æ•°æ—¥
 			if (uSrchResThisYDaysTtl >= uTodayDaysInTotal) {
-				cout << "×î½üÒ»´Î" << SearchRes->GetFestivalName() 
-					 << "½Ú¾à½ñÈÕ»¹ÓĞ"
-					 << uSrchResThisYDaysTtl - uTodayDaysInTotal << "Ìì¡£";
+				cout << "æœ€è¿‘ä¸€æ¬¡" << SearchRes->GetFestivalName() 
+					 << "èŠ‚è·ä»Šæ—¥è¿˜æœ‰"
+					 << uSrchResThisYDaysTtl - uTodayDaysInTotal << "å¤©ã€‚";
 				return RES::COUNTDOWN_OK;
 			}
-			//Èç¹û½ñÄêµÄ½ÚÈÕÒÑ¹ı£¬Ê¹ÓÃÃ÷ÄêµÄ¸Ã½ÚÈÕ¼ÆËãµ¹ÊıÈÕ
+			//å¦‚æœä»Šå¹´çš„èŠ‚æ—¥å·²è¿‡ï¼Œä½¿ç”¨æ˜å¹´çš„è¯¥èŠ‚æ—¥è®¡ç®—å€’æ•°æ—¥
 			else {
 				unsigned int uSrchResNxtYDaysTtl 
 					= YMDDate(YMDDate::Today().GetYear() + 1
 						, SearchRes->GetMDDate()).DaysPassedInTotal();
-				cout << "×î½üÒ»´Î" << SearchRes->GetFestivalName() 
-					 << "½Ú¾à½ñÈÕ»¹ÓĞ"
-					 << uSrchResNxtYDaysTtl - uTodayDaysInTotal << "Ìì¡£";
+				cout << "æœ€è¿‘ä¸€æ¬¡" << SearchRes->GetFestivalName() 
+					 << "èŠ‚è·ä»Šæ—¥è¿˜æœ‰"
+					 << uSrchResNxtYDaysTtl - uTodayDaysInTotal << "å¤©ã€‚";
 				return RES::COUNTDOWN_OK;
 			}
 		}
 
-		//´òÓ¡REGULAR_WEEKDAYÀàĞÍµÄ½ÚÈÕµ¹ÊıÈÕ
+		//æ‰“å°REGULAR_WEEKDAYç±»å‹çš„èŠ‚æ—¥å€’æ•°æ—¥
 		if (TypeRes == FestivalType::REGULAR_WEEKDAY) {
-			//½ñÄêµÄ¸Ã½ÚÈÕµÄ×ÜÌìÊı
+			//ä»Šå¹´çš„è¯¥èŠ‚æ—¥çš„æ€»å¤©æ•°
 			unsigned int uSrchResThisYDaysTtl 
 				= YMDDate::YMOWeekDayToYMDDate(YMDDate::Today().GetYear()
 					, SearchRes->GetMOWeekDay().GetMonthValue()
 					, SearchRes->GetMOWeekDay().GetOrdial()
 					, SearchRes->GetMOWeekDay().GetWeekDayActualValue()).DaysPassedInTotal();
-			//½ñÌìµÄ×ÜÌìÊı
+			//ä»Šå¤©çš„æ€»å¤©æ•°
 			unsigned int uTodayDaysInTotal = YMDDate::Today().DaysPassedInTotal();
 
-			//Èç¹û½ñÄêµÄ¸Ã½ÚÈÕ»¹Ã»¹ı£¬Ö±½Ó´òÓ¡µ¹ÊıÈÕ
+			//å¦‚æœä»Šå¹´çš„è¯¥èŠ‚æ—¥è¿˜æ²¡è¿‡ï¼Œç›´æ¥æ‰“å°å€’æ•°æ—¥
 			if (uSrchResThisYDaysTtl >= uTodayDaysInTotal) {
-				cout << "×î½üÒ»´Î" << SearchRes->GetFestivalName() << "½Ú¾à½ñÈÕ»¹ÓĞ"
-					 << uSrchResThisYDaysTtl - uTodayDaysInTotal << "Ìì¡£";
+				cout << "æœ€è¿‘ä¸€æ¬¡" << SearchRes->GetFestivalName() << "èŠ‚è·ä»Šæ—¥è¿˜æœ‰"
+					 << uSrchResThisYDaysTtl - uTodayDaysInTotal << "å¤©ã€‚";
 				cout << endl;
 				return RES::COUNTDOWN_OK;
 			}
-			//Èç¹û½ñÄêµÄ½ÚÈÕÒÑ¹ı£¬Ê¹ÓÃÃ÷ÄêµÄ¸Ã½ÚÈÕ¼ÆËãµ¹ÊıÈÕ
+			//å¦‚æœä»Šå¹´çš„èŠ‚æ—¥å·²è¿‡ï¼Œä½¿ç”¨æ˜å¹´çš„è¯¥èŠ‚æ—¥è®¡ç®—å€’æ•°æ—¥
 			else {
 				unsigned int SearchResNextYearDaysInTotal
 					= YMDDate::YMOWeekDayToYMDDate(YMDDate::Today().GetYear() + 1
@@ -298,8 +298,8 @@ RES Controller::CountDownFestival(const string& sTargetName) const{
 						, SearchRes->GetMOWeekDay().GetOrdial()
 						, SearchRes->GetMOWeekDay().GetWeekDayActualValue()).DaysPassedInTotal();
 
-				cout << "×î½üÒ»´Î" << SearchRes->GetFestivalName() << "½Ú¾à½ñÈÕ»¹ÓĞ"
-					 << SearchResNextYearDaysInTotal - uTodayDaysInTotal << "Ìì¡£";
+				cout << "æœ€è¿‘ä¸€æ¬¡" << SearchRes->GetFestivalName() << "èŠ‚è·ä»Šæ—¥è¿˜æœ‰"
+					 << SearchResNextYearDaysInTotal - uTodayDaysInTotal << "å¤©ã€‚";
 				cout << endl;
 				return RES::COUNTDOWN_OK;
 			}

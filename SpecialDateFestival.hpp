@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ SpecialDateFestival.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤SpecialDateFestivalÀà£¬¼¯ÖĞ±àĞ´SpecialDateFestivalÀà³ÉÔ±º¯ÊıµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ SpecialDateFestival.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤SpecialDateFestivalç±»ï¼Œé›†ä¸­ç¼–å†™SpecialDateFestivalç±»æˆå‘˜å‡½æ•°çš„å£°æ˜ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 #ifndef SpecialDateFestival_hpp
 #define SpecialDateFestival_hpp
@@ -11,42 +11,42 @@
 #include "YMDDate.hpp"
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ SpecialDateFestival
-¡¾¹¦ÄÜ¡¿ Ä³ÄêÄ³ÔÂÄ³ÈÕµÄÈÕÆÚĞÎÊ½£¬ÊÇÎ¨Ò»µÄÈÕÆÚ
-¡¾½Ó¿ÚËµÃ÷¡¿ 4¸ögetterÓÃÀ´»ñÈ¡Êı¾İ£¬3¸öModifyÓÃÀ´ĞŞ¸Ä³ÉÔ±Êı¾İ¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€ç±»åã€‘ SpecialDateFestival
+ã€åŠŸèƒ½ã€‘ æŸå¹´æŸæœˆæŸæ—¥çš„æ—¥æœŸå½¢å¼ï¼Œæ˜¯å”¯ä¸€çš„æ—¥æœŸ
+ã€æ¥å£è¯´æ˜ã€‘ 4ä¸ªgetterç”¨æ¥è·å–æ•°æ®ï¼Œ3ä¸ªModifyç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class SpecialDateFestival : public Festival {
 public:
-	//Ìí¼Ó½ÚÈÕ
+	//æ·»åŠ èŠ‚æ—¥
 	static Festival* Add(const string& Name, const YMDDate& YMDDate);
-	//É¾³ıÄ¬ÈÏ¹¹Ôìº¯Êı¡¢¿½±´¹¹Ôìº¯Êı¡¢¸³ÖµÔËËã·ûµÈ
+	//åˆ é™¤é»˜è®¤æ„é€ å‡½æ•°ã€æ‹·è´æ„é€ å‡½æ•°ã€èµ‹å€¼è¿ç®—ç¬¦ç­‰
 	SpecialDateFestival() = delete;
 	SpecialDateFestival(const SpecialDateFestival&) = delete;
 	SpecialDateFestival(const char*, const MDDate&) = delete;
 	SpecialDateFestival& operator=(const SpecialDateFestival& Source) = delete;
 
-	//ĞŞ¸ÄMOW£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬´Ë´¦²»ÓèÊµÏÖ
+	//ä¿®æ”¹MOWï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œæ­¤å¤„ä¸äºˆå®ç°
 	bool ModifyMOWeekDay(const unsigned int& uMonth, const unsigned int& uOrdial
 						, const unsigned int& uWeekDay);
-	//ĞŞ¸ÄÔÂÈÕ£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬¿ÉÒÔÊµÏÖ
+	//ä¿®æ”¹æœˆæ—¥ï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œå¯ä»¥å®ç°
 	bool ModifyMDDate(const unsigned int& uMonth, const unsigned int& uDay);
-	//ĞŞ¸ÄÄêÔÂÈÕ£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬¿ÉÒÔÊµÏÖ
+	//ä¿®æ”¹å¹´æœˆæ—¥ï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œå¯ä»¥å®ç°
 	bool ModifyYMDDate(const unsigned int& uYear, const unsigned int& uMonth
 						, const unsigned int& uDay);
 
-	//»ñµÃÄêÔÂÈÕ£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬ÊµÏÖÕâ¸öº¯Êı
+	//è·å¾—å¹´æœˆæ—¥ï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œå®ç°è¿™ä¸ªå‡½æ•°
 	YMDDate GetYMDDate() const;
-	//»ñµÃÔÂÈÕ£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬ÊµÏÖÕâ¸öº¯Êı
+	//è·å¾—æœˆæ—¥ï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œå®ç°è¿™ä¸ªå‡½æ•°
 	MDDate GetMDDate() const;
-	//»ñµÃMOW£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬ÊµÏÖÕâ¸öº¯Êı
+	//è·å¾—MOWï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œå®ç°è¿™ä¸ªå‡½æ•°
 	MOWeekDay GetMOWeekDay() const;
-	//»ñµÃÖÖÀà£¬´¿Ğéº¯ÊıµÄÊµÏÖ£¬ÊµÏÖÕâ¸öº¯Êı
+	//è·å¾—ç§ç±»ï¼Œçº¯è™šå‡½æ•°çš„å®ç°ï¼Œå®ç°è¿™ä¸ªå‡½æ•°
 	FestivalType GetType() const;
 
 private:
-	//´ø²ÎÊıµÄ¹¹Ôìº¯Êı
+	//å¸¦å‚æ•°çš„æ„é€ å‡½æ•°
 	SpecialDateFestival(const string& Name, const YMDDate& YMDDate);
 	YMDDate m_YMDDate;
 };

@@ -1,0 +1,10 @@
+本作业将MVC三类文件放在了同一级文件夹中压缩提交。
+Festival.txt 为节日信息文本。
+
+Controller.hpp/cpp中包含全部控制类。
+
+main.cpp中包含所有界面操作。
+
+其他均为Model类。
+
+在本机 Visual Studio 2022 开发编译。

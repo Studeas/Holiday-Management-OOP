@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼þÃû¡¿ SearchYMDRange.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤SearchYMDRangeÀà£¬¼¯ÖÐ±àÐ´SearchYMDRangeÀà³ÉÔ±º¯ÊýµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€æ–‡ä»¶åã€‘ SearchYMDRange.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤SearchYMDRangeç±»ï¼Œé›†ä¸­ç¼–å†™SearchYMDRangeç±»æˆå‘˜å‡½æ•°çš„å£°æ˜Žã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #ifndef SearchYMDRange_hpp
@@ -19,37 +19,37 @@
 #include <algorithm>
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ SortType
-¡¾¹¦ÄÜ¡¿ Ã¶¾ÙÀà£¬¹ÜÀíÅÅÐòÀàÐÍÃû
-¡¾½Ó¿ÚËµÃ÷¡¿ ÎÞ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€ç±»åã€‘ SortType
+ã€åŠŸèƒ½ã€‘ æžšä¸¾ç±»ï¼Œç®¡ç†æŽ’åºç±»åž‹å
+ã€æŽ¥å£è¯´æ˜Žã€‘ æ— 
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 enum class SortType {
 	BY_NAME, BY_DATE
 };
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ SearchYMDRange
-¡¾¹¦ÄÜ¡¿ ÊµÏÖÄêÔÂÈÕ·¶Î§ÄÚµÄ½ÚÈÕ²éÕÒºÍÅÅÐò´òÓ¡
-¡¾½Ó¿ÚËµÃ÷¡¿ PrintFestivals¿É±»µ÷ÓÃ£¬ÓÃÀ´ÊµÏÖ¹¦ÄÜ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€ç±»åã€‘ SearchYMDRange
+ã€åŠŸèƒ½ã€‘ å®žçŽ°å¹´æœˆæ—¥èŒƒå›´å†…çš„èŠ‚æ—¥æŸ¥æ‰¾å’ŒæŽ’åºæ‰“å°
+ã€æŽ¥å£è¯´æ˜Žã€‘ PrintFestivalså¯è¢«è°ƒç”¨ï¼Œç”¨æ¥å®žçŽ°åŠŸèƒ½
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class SearchYMDRange {
 public:
-	//É¾³ýÄ¬ÈÏ¹¹Ôìº¯Êý£¬¿½±´¹¹Ôìº¯Êý
+	//åˆ é™¤é»˜è®¤æž„é€ å‡½æ•°ï¼Œæ‹·è´æž„é€ å‡½æ•°
 	SearchYMDRange() = delete;
 	SearchYMDRange(const SearchYMDRange&) = delete;
 
-	//´ø²ÎÊýµÄ¹¹Ôìº¯Êý
+	//å¸¦å‚æ•°çš„æž„é€ å‡½æ•°
 	SearchYMDRange(const YMDDate& YMDDate1
 				, const YMDDate& YMDDate2
 				, const SortType& SortType);
-	//Ä¬ÈÏÎö¹¹º¯Êý
+	//é»˜è®¤æžæž„å‡½æ•°
 	~SearchYMDRange() = default;
 
-	//ÊµÏÖ²éÕÒ¡¢ÅÅÐòºÍ´òÓ¡µÄÖ÷Òª¹¦ÄÜº¯Êý
+	//å®žçŽ°æŸ¥æ‰¾ã€æŽ’åºå’Œæ‰“å°çš„ä¸»è¦åŠŸèƒ½å‡½æ•°
 	vector<Festival::FestivalInThisYear*> PrintFestivals() const;
 
 private:

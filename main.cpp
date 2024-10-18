@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ main.cpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ µ÷ÓÃControllerµÄ¶ÔÏó£¬ÊµÏÖÈí¼ş¹¦ÄÜ£¬Ìá¹©ÊäÈëÊä³ö½»»¥½çÃæ¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ main.cpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ è°ƒç”¨Controllerçš„å¯¹è±¡ï¼Œå®ç°è½¯ä»¶åŠŸèƒ½ï¼Œæä¾›è¾“å…¥è¾“å‡ºäº¤äº’ç•Œé¢ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #include <iostream>
@@ -22,19 +22,19 @@ using namespace std;
 
 int main() {
 
-	//¿ªÊ¼ÌáÊ¾Óï
+	//å¼€å§‹æç¤ºè¯­
 	Controller ctr = Controller("Festivals.txt");
 
-	cout << "»¶Ó­ÄúÊ¹ÓÃ½ÚÈÕ¹ÜÀíÈí¼ş£¡ÊäÈë¡°1¡±¿ªÊ¼Ê¹ÓÃ£¬ÊäÈë¡°0¡±ÍË³ö³ÌĞò¡£" << endl ;
+	cout << "æ¬¢è¿æ‚¨ä½¿ç”¨èŠ‚æ—¥ç®¡ç†è½¯ä»¶ï¼è¾“å…¥â€œ1â€å¼€å§‹ä½¿ç”¨ï¼Œè¾“å…¥â€œ0â€é€€å‡ºç¨‹åºã€‚" << endl ;
 	cout << "---------------------------------------------------------" 
 		 << endl;
 
-	//²ÉÓÃÊı×Ö½øĞĞÖ¸Áî½»»¥£¬µÈ´ı½øÈëÖ÷Ò³
+	//é‡‡ç”¨æ•°å­—è¿›è¡ŒæŒ‡ä»¤äº¤äº’ï¼Œç­‰å¾…è¿›å…¥ä¸»é¡µ
 	int iExitCommand = 1;
 	do {
 		cin >> iExitCommand;
 		if (iExitCommand != 0 && iExitCommand != 1) {
-			cout << "ÄúµÄÊäÈë³¬³ö·¶Î§¡£ÊäÈë¡°1¡±¿ªÊ¼Ê¹ÓÃ£¬ÊäÈë¡°0¡±ÍË³ö³ÌĞò¡£" << endl;
+			cout << "æ‚¨çš„è¾“å…¥è¶…å‡ºèŒƒå›´ã€‚è¾“å…¥â€œ1â€å¼€å§‹ä½¿ç”¨ï¼Œè¾“å…¥â€œ0â€é€€å‡ºç¨‹åºã€‚" << endl;
 		}
 	} while (iExitCommand != 0 && iExitCommand != 1);
 
@@ -42,35 +42,35 @@ int main() {
 
 		unsigned int uChoiceNum = 0;
 
-		//Ê×Ò³ÄÚÈİÌáÊ¾
+		//é¦–é¡µå†…å®¹æç¤º
 		cout << "---------------------------------------------------------" 
 			 << endl;
-		cout << "**Ê×Ò³" << endl;
-		cout << "±¾³ÌĞòµÄ»ù´¡¹¦ÄÜÊÇ½øĞĞ½ÚÈÕ¹ÜÀí¡£" << endl 
-			 << "¸ù¾İÆäÈÕÆÚ¸ñÊ½£¬½ÚÈÕ¿ÉÒÔ·ÖÎªÈıÖÖÀàĞÍ£º" << endl;
-		cout << "1. µÚÒ»ÖÖ½ÚÈÕµÄÈÕÆÚÎª¡°Ä³Äê¡¢Ä³ÔÂ¡¢Ä³ÈÕ¡±µÄÌØ¶¨ÈÕÆÚ£»" 
-			 << endl << "2. µÚ¶şÖÖ½ÚÈÕµÄÈÕÆÚÎª¡°Ä³ÔÂ¡¢Ä³ÈÕ¡±£¬Ò»ÄêÒ»´Î£»" << endl 
-			 << "3. µÚÈıÖÖ½ÚÈÕµÄÈÕÆÚÎª¡°Ä³ÔÂ¡¢µÚÄ³¸ö¡¢ĞÇÆÚ¼¸¡±£¬Ò»ÄêÒ»´Î¡£"
+		cout << "**é¦–é¡µ" << endl;
+		cout << "æœ¬ç¨‹åºçš„åŸºç¡€åŠŸèƒ½æ˜¯è¿›è¡ŒèŠ‚æ—¥ç®¡ç†ã€‚" << endl 
+			 << "æ ¹æ®å…¶æ—¥æœŸæ ¼å¼ï¼ŒèŠ‚æ—¥å¯ä»¥åˆ†ä¸ºä¸‰ç§ç±»å‹ï¼š" << endl;
+		cout << "1. ç¬¬ä¸€ç§èŠ‚æ—¥çš„æ—¥æœŸä¸ºâ€œæŸå¹´ã€æŸæœˆã€æŸæ—¥â€çš„ç‰¹å®šæ—¥æœŸï¼›" 
+			 << endl << "2. ç¬¬äºŒç§èŠ‚æ—¥çš„æ—¥æœŸä¸ºâ€œæŸæœˆã€æŸæ—¥â€ï¼Œä¸€å¹´ä¸€æ¬¡ï¼›" << endl 
+			 << "3. ç¬¬ä¸‰ç§èŠ‚æ—¥çš„æ—¥æœŸä¸ºâ€œæŸæœˆã€ç¬¬æŸä¸ªã€æ˜ŸæœŸå‡ â€ï¼Œä¸€å¹´ä¸€æ¬¡ã€‚"
 			 << endl << endl;
-		cout << "ÒÔÏÂÎª±¾³ÌĞòµÄ»ù±¾¹¦ÄÜ£º" << endl;
-		cout << "1. Ìí¼Ó½ÚÈÕ" << endl;
-		cout << "2. É¾³ı½ÚÈÕ" << endl;
-		cout << "3. ĞŞ¸Ä½ÚÈÕĞÅÏ¢£¨Ãû³Æ¡¢ÈÕÆÚ£©" << endl;
-		cout << "4. ¸ù¾İ¡°Äê¡¢ÔÂ¡±£¬´òÓ¡µ±ÔÂÈÕÀú¼°½ÚÈÕ" << endl;
-		cout << "5. ²éÑ¯Ö¸¶¨¡°Äê¡¢ÔÂ¡¢ÈÕ¡±·¶Î§ÄÚµÄ½ÚÈÕ£¬²¢ÅÅĞò´òÓ¡" << endl;
-		cout << "6. ²éÑ¯Ä³Î´À´½ÚÈÕµÄµ¹ÊıÈÕ" << endl;
+		cout << "ä»¥ä¸‹ä¸ºæœ¬ç¨‹åºçš„åŸºæœ¬åŠŸèƒ½ï¼š" << endl;
+		cout << "1. æ·»åŠ èŠ‚æ—¥" << endl;
+		cout << "2. åˆ é™¤èŠ‚æ—¥" << endl;
+		cout << "3. ä¿®æ”¹èŠ‚æ—¥ä¿¡æ¯ï¼ˆåç§°ã€æ—¥æœŸï¼‰" << endl;
+		cout << "4. æ ¹æ®â€œå¹´ã€æœˆâ€ï¼Œæ‰“å°å½“æœˆæ—¥å†åŠèŠ‚æ—¥" << endl;
+		cout << "5. æŸ¥è¯¢æŒ‡å®šâ€œå¹´ã€æœˆã€æ—¥â€èŒƒå›´å†…çš„èŠ‚æ—¥ï¼Œå¹¶æ’åºæ‰“å°" << endl;
+		cout << "6. æŸ¥è¯¢æŸæœªæ¥èŠ‚æ—¥çš„å€’æ•°æ—¥" << endl;
 		cout << "---------------------------------------------------------" 
 			 << endl;
 
-		//ÊäÈë£¬Ñ¡ÔñÏ£ÍûÊ¹ÓÃµÄ¹¦ÄÜ
+		//è¾“å…¥ï¼Œé€‰æ‹©å¸Œæœ›ä½¿ç”¨çš„åŠŸèƒ½
 		bool IsValidInput = true;
 		do {
-			cout << "ÇëÊäÈë¡°1~6¡±µÄÕûÊı£¬Ñ¡ÔñÄúÏ£ÍûÊ¹ÓÃµÄ¹¦ÄÜ¡£"
-				 << "ÊäÈë¡°0¡±¼´¿ÉÍË³ö³ÌĞò¡£" << endl;
+			cout << "è¯·è¾“å…¥â€œ1~6â€çš„æ•´æ•°ï¼Œé€‰æ‹©æ‚¨å¸Œæœ›ä½¿ç”¨çš„åŠŸèƒ½ã€‚"
+				 << "è¾“å…¥â€œ0â€å³å¯é€€å‡ºç¨‹åºã€‚" << endl;
 			cin >> uChoiceNum;
 			if (uChoiceNum < 0 || uChoiceNum > 6) {
 				IsValidInput = false;
-				cout << "ÄúµÄÊäÈë³¬³ö·¶Î§¡£";
+				cout << "æ‚¨çš„è¾“å…¥è¶…å‡ºèŒƒå›´ã€‚";
 			}
 			else {
 				IsValidInput = true;
@@ -79,140 +79,140 @@ int main() {
 		cout << "---------------------------------------------------------"
 			<< endl;
 
-		//¹¦ÄÜ1£ºÔö¼Ó½ÚÈÕ
+		//åŠŸèƒ½1ï¼šå¢åŠ èŠ‚æ—¥
 		if (uChoiceNum == 1) {
 			string sNameInput;
-			cout << "ÇëÊäÈë½ÚÈÕÃû³Æ£¨Ó¢ÎÄ£©: ";
+			cout << "è¯·è¾“å…¥èŠ‚æ—¥åç§°ï¼ˆè‹±æ–‡ï¼‰: ";
 			cin >> sNameInput;
 			int iTypeChoice = 1;
 			do {
-				cout << "ÇëÊäÈë¡°1~3¡±µÄÕûÊı,Ñ¡Ôñ½ÚÈÕÀàĞÍ" << endl;
+				cout << "è¯·è¾“å…¥â€œ1~3â€çš„æ•´æ•°,é€‰æ‹©èŠ‚æ—¥ç±»å‹" << endl;
 				cin >> iTypeChoice;
 				if (iTypeChoice != 1 && iTypeChoice != 2 && iTypeChoice != 3) {
-					cout << "ÄúµÄÊäÈë³¬³ö·¶Î§¡£";
+					cout << "æ‚¨çš„è¾“å…¥è¶…å‡ºèŒƒå›´ã€‚";
 				}
 			} while (iTypeChoice != 1 && iTypeChoice != 2 && iTypeChoice != 3);
 
-			//Ôö¼ÓSpecialDateFestival
+			//å¢åŠ SpecialDateFestival
 			if (iTypeChoice == 1) {
 				unsigned int uYearInput;
 				unsigned int uMonthInput;
 				unsigned int uDayInput;
-				cout << "ÇëÊäÈë¡°Ä³Äê¡¢Ä³ÔÂ¡¢Ä³ÈÕ¡±¸ñÊ½µÄÈÕÆÚ¡£" << endl;
-				cout << "Äê£º";
+				cout << "è¯·è¾“å…¥â€œæŸå¹´ã€æŸæœˆã€æŸæ—¥â€æ ¼å¼çš„æ—¥æœŸã€‚" << endl;
+				cout << "å¹´ï¼š";
 				cin >> uYearInput;
-				cout << "ÔÂ£º";
+				cout << "æœˆï¼š";
 				cin >> uMonthInput;
-				cout << "ÈÕ£º";
+				cout << "æ—¥ï¼š";
 				cin >> uDayInput;
 				ctr.AddFestival(FestivalType::SPECIAL_DATE
 					, sNameInput, uYearInput, uMonthInput, uDayInput);				
 			}
-			//Ôö¼ÓRegularDateFestival
+			//å¢åŠ RegularDateFestival
 			if (iTypeChoice == 2) {
 				unsigned int uMonthInput;
 				unsigned int uDayInput;
-				cout << "ÇëÊäÈë¡°Ä³ÔÂ¡¢Ä³ÈÕ¡±¸ñÊ½µÄÈÕÆÚ¡£" << endl;
-				cout << "ÔÂ£º";
+				cout << "è¯·è¾“å…¥â€œæŸæœˆã€æŸæ—¥â€æ ¼å¼çš„æ—¥æœŸã€‚" << endl;
+				cout << "æœˆï¼š";
 				cin >> uMonthInput;
-				cout << "ÈÕ£º";
+				cout << "æ—¥ï¼š";
 				cin >> uDayInput;
 				ctr.AddFestival(FestivalType::REGULAR_DATE
 					, sNameInput, uMonthInput, uDayInput);
-				cout << "Ìí¼Ó³É¹¦£¡";
+				cout << "æ·»åŠ æˆåŠŸï¼";
 			}
-			//Ôö¼ÓRegularWeekDayFestival
+			//å¢åŠ RegularWeekDayFestival
 			if (iTypeChoice == 3) {
 				unsigned int uMonthInput;
 				unsigned int uOrdialInput;
 				unsigned int uWeekDayInput;
-				cout << "ÇëÊäÈë¡°Ä³ÔÂ¡¢µÚÄ³¸ö¡¢ĞÇÆÚ¼¸¡±¸ñÊ½µÄÈÕÆÚ¡£" << endl;
-				cout << "ÔÂ£º";
+				cout << "è¯·è¾“å…¥â€œæŸæœˆã€ç¬¬æŸä¸ªã€æ˜ŸæœŸå‡ â€æ ¼å¼çš„æ—¥æœŸã€‚" << endl;
+				cout << "æœˆï¼š";
 				cin >> uMonthInput;
-				cout << "µÚ¼¸¸ö£º";
+				cout << "ç¬¬å‡ ä¸ªï¼š";
 				cin >> uOrdialInput;
-				cout << "ĞÇÆÚ¼¸£º";
+				cout << "æ˜ŸæœŸå‡ ï¼š";
 				cin >> uWeekDayInput;
 				ctr.AddFestival(FestivalType::REGULAR_WEEKDAY
 					, sNameInput, uMonthInput, uOrdialInput, uWeekDayInput);
-				cout << "Ìí¼Ó³É¹¦£¡";
+				cout << "æ·»åŠ æˆåŠŸï¼";
 			}
 		}
 
-		//¹¦ÄÜ2£ºÉ¾³ı½ÚÈÕ
+		//åŠŸèƒ½2ï¼šåˆ é™¤èŠ‚æ—¥
 		if (uChoiceNum == 2) {
-			cout << "ÊäÈëÃû³Æ£¬²éÕÒ²¢É¾³ıÖ¸¶¨Ãû³ÆµÄ½ÚÈÕ¡£" << endl;
-			cout << "Ãû³Æ£º";
+			cout << "è¾“å…¥åç§°ï¼ŒæŸ¥æ‰¾å¹¶åˆ é™¤æŒ‡å®šåç§°çš„èŠ‚æ—¥ã€‚" << endl;
+			cout << "åç§°ï¼š";
 			string sTargetName;
 			cin >> sTargetName;
 			ctr.DelFestival(sTargetName);
 		}
 
-		//¹¦ÄÜ3£ºĞŞ¸Ä½ÚÈÕĞÅÏ¢£¨Ãû³Æ¡¢ÈÕÆÚ£©
+		//åŠŸèƒ½3ï¼šä¿®æ”¹èŠ‚æ—¥ä¿¡æ¯ï¼ˆåç§°ã€æ—¥æœŸï¼‰
 		if (uChoiceNum == 3) {
-			cout << "ÇëÑ¡ÔñĞŞ¸ÄÀàĞÍ£º1. ĞŞ¸ÄÃû³Æ¡£ 2.ĞŞ¸ÄÈÕÆÚ¡£ " << endl;
+			cout << "è¯·é€‰æ‹©ä¿®æ”¹ç±»å‹ï¼š1. ä¿®æ”¹åç§°ã€‚ 2.ä¿®æ”¹æ—¥æœŸã€‚ " << endl;
 			int iModifyType = 1;
 			do {
 				cin >> iModifyType;
 				if (iModifyType != 1 && iModifyType != 2) {
-					cout << "ÄúµÄÊäÈë³¬³ö·¶Î§¡£ÇëÑ¡ÔñÅÅĞò·½·¨£º" 
-						 <<  "ĞŞ¸ÄÀàĞÍ£º1. ĞŞ¸ÄÃû³Æ¡£ 2.ĞŞ¸ÄÈÕÆÚ¡£" << endl;
+					cout << "æ‚¨çš„è¾“å…¥è¶…å‡ºèŒƒå›´ã€‚è¯·é€‰æ‹©æ’åºæ–¹æ³•ï¼š" 
+						 <<  "ä¿®æ”¹ç±»å‹ï¼š1. ä¿®æ”¹åç§°ã€‚ 2.ä¿®æ”¹æ—¥æœŸã€‚" << endl;
 				}
 			} while (iModifyType != 1 && iModifyType != 2);
-			//ĞŞ¸ÄÃû³Æ
+			//ä¿®æ”¹åç§°
 			if (iModifyType == 1) {
-				cout << "ÇëÊäÈëÔ­Ãû³Æ£º";
+				cout << "è¯·è¾“å…¥åŸåç§°ï¼š";
 				string sOldName;
 				cin >> sOldName;
-				cout << "ÇëÊäÈëĞÂÃû³Æ£º";
+				cout << "è¯·è¾“å…¥æ–°åç§°ï¼š";
 				string sNewName;
 				cin >> sNewName;
 				ctr.ModifyFestivalName(sOldName, sNewName);
 			}
-			//ĞŞ¸ÄÈÕÆÚ
+			//ä¿®æ”¹æ—¥æœŸ
 			if (iModifyType == 2) {
-				cout << "ÇëÊäÈëÓûĞŞ¸ÄÈÕÆÚµÄ½ÚÈÕÃû³Æ£º";
+				cout << "è¯·è¾“å…¥æ¬²ä¿®æ”¹æ—¥æœŸçš„èŠ‚æ—¥åç§°ï¼š";
 				string sName;
 				cin >> sName;
 				Festival* pSearchRes = Festival::SearchFestivalByName(sName);
-				//ĞŞ¸ÄRegularDateFestival½ÚÈÕ
+				//ä¿®æ”¹RegularDateFestivalèŠ‚æ—¥
 				if (pSearchRes->GetType() == FestivalType::REGULAR_DATE) {
 					unsigned int uMonthInput;
 					unsigned int uDayInput;
-					cout << "ÇëÊäÈë¡°Ä³ÔÂ¡¢Ä³ÈÕ¡±¸ñÊ½µÄĞÂÈÕÆÚ¡£" << endl;
-					cout << "ÔÂ£º";
+					cout << "è¯·è¾“å…¥â€œæŸæœˆã€æŸæ—¥â€æ ¼å¼çš„æ–°æ—¥æœŸã€‚" << endl;
+					cout << "æœˆï¼š";
 					cin >> uMonthInput;
-					cout << "ÈÕ£º";
+					cout << "æ—¥ï¼š";
 					cin >> uDayInput;
 					ctr.ModifyFestivalTime(FestivalType::REGULAR_DATE
 						, sName, uMonthInput, uDayInput);
 				}
-				//ĞŞ¸ÄRegularWeekDateFestival½ÚÈÕ
+				//ä¿®æ”¹RegularWeekDateFestivalèŠ‚æ—¥
 				if (pSearchRes->GetType() == FestivalType::REGULAR_WEEKDAY) {
 					unsigned int uMonthInput;
 					unsigned int uOrdialInput;
 					unsigned int uWeekDayInput;
-					cout << "ÇëÊäÈë¡°Ä³ÔÂ¡¢µÚÄ³¸ö¡¢ĞÇÆÚ¼¸¡±¸ñÊ½µÄĞÂÈÕÆÚ¡£" << endl;
-					cout << "ÔÂ£º";
+					cout << "è¯·è¾“å…¥â€œæŸæœˆã€ç¬¬æŸä¸ªã€æ˜ŸæœŸå‡ â€æ ¼å¼çš„æ–°æ—¥æœŸã€‚" << endl;
+					cout << "æœˆï¼š";
 					cin >> uMonthInput;
-					cout << "µÚ¼¸¸ö£º";
+					cout << "ç¬¬å‡ ä¸ªï¼š";
 					cin >> uOrdialInput;
-					cout << "ĞÇÆÚ¼¸£º";
+					cout << "æ˜ŸæœŸå‡ ï¼š";
 					cin >> uWeekDayInput;
 					ctr.ModifyFestivalTime(FestivalType::REGULAR_WEEKDAY
 						, sName, uMonthInput, uOrdialInput, uWeekDayInput);
 				}
-				//ĞŞ¸ÄSpecialDateFestival½ÚÈÕ
+				//ä¿®æ”¹SpecialDateFestivalèŠ‚æ—¥
 				if (pSearchRes->GetType() == FestivalType::SPECIAL_DATE) {
 					unsigned int uYearInput;
 					unsigned int uMonthInput;
 					unsigned int uDayInput;
-					cout << "ÇëÊäÈë¡°Ä³Äê¡¢Ä³ÔÂ¡¢Ä³ÈÕ¡±¸ñÊ½µÄĞÂÈÕÆÚ¡£" << endl;
-					cout << "Äê£º";
+					cout << "è¯·è¾“å…¥â€œæŸå¹´ã€æŸæœˆã€æŸæ—¥â€æ ¼å¼çš„æ–°æ—¥æœŸã€‚" << endl;
+					cout << "å¹´ï¼š";
 					cin >> uYearInput;
-					cout << "ÔÂ£º";
+					cout << "æœˆï¼š";
 					cin >> uMonthInput;
-					cout << "ÈÕ£º";
+					cout << "æ—¥ï¼š";
 					cin >> uDayInput;
 					ctr.ModifyFestivalTime(FestivalType::SPECIAL_DATE
 						, sName, uYearInput, uMonthInput, uDayInput);
@@ -220,51 +220,51 @@ int main() {
 			}
 		}
 
-		//¹¦ÄÜ4£º¸ù¾İ¡°Äê¡¢ÔÂ¡±£¬´òÓ¡µ±ÔÂÈÕÀú¼°½ÚÈÕ
+		//åŠŸèƒ½4ï¼šæ ¹æ®â€œå¹´ã€æœˆâ€ï¼Œæ‰“å°å½“æœˆæ—¥å†åŠèŠ‚æ—¥
 		if (uChoiceNum == 4) {
-			cout << "ÇëÊäÈë¡°Äê¡¢ÔÂ¡±ÈÕÆÚ£¬´òÓ¡µ±ÔÂÔÂÀú¡¢µ±ÔÂ½ÚÈÕ¡£" << endl;
+			cout << "è¯·è¾“å…¥â€œå¹´ã€æœˆâ€æ—¥æœŸï¼Œæ‰“å°å½“æœˆæœˆå†ã€å½“æœˆèŠ‚æ—¥ã€‚" << endl;
 			unsigned int uYearInput;
 			unsigned int uMonthInput;
-			cout << "Äê£º";
+			cout << "å¹´ï¼š";
 			cin >> uYearInput;
-			cout << "ÔÂ£º";
+			cout << "æœˆï¼š";
 			cin >> uMonthInput;
 			ctr.MonthCalendar(uYearInput, uMonthInput);
 		}
 
-		//¹¦ÄÜ5£º²éÑ¯Ö¸¶¨¡°Äê¡¢ÔÂ¡¢ÈÕ¡±·¶Î§ÄÚµÄ½ÚÈÕ£¬²¢ÅÅĞò´òÓ¡
+		//åŠŸèƒ½5ï¼šæŸ¥è¯¢æŒ‡å®šâ€œå¹´ã€æœˆã€æ—¥â€èŒƒå›´å†…çš„èŠ‚æ—¥ï¼Œå¹¶æ’åºæ‰“å°
 		if (uChoiceNum == 5) {
-			cout << "ÇëÊäÈëÁ½¸ö¡°Äê¡¢ÔÂ¡¢ÈÕ¡±ÈÕÆÚ£¬²¢×ÔÑ¡ÅÅĞò·½·¨£¬´òÓ¡´ËÆÚ¼äµÄËùÓĞ½ÚÈÕ¡£"
+			cout << "è¯·è¾“å…¥ä¸¤ä¸ªâ€œå¹´ã€æœˆã€æ—¥â€æ—¥æœŸï¼Œå¹¶è‡ªé€‰æ’åºæ–¹æ³•ï¼Œæ‰“å°æ­¤æœŸé—´çš„æ‰€æœ‰èŠ‚æ—¥ã€‚"
 				 << endl;
 			unsigned int uYearInput1;
 			unsigned int uMonthInput1;
 			unsigned int uDayInput1;
-			cout << "Äê1£º";
+			cout << "å¹´1ï¼š";
 			cin >> uYearInput1;
-			cout << "ÔÂ1£º";
+			cout << "æœˆ1ï¼š";
 			cin >> uMonthInput1;
-			cout << "ÈÕ1£º";
+			cout << "æ—¥1ï¼š";
 			cin >> uDayInput1;
 			unsigned int uYearInput2;
 			unsigned int uMonthInput2;
 			unsigned int uDayInput2;
-			cout << "Äê2£º";
+			cout << "å¹´2ï¼š";
 			cin >> uYearInput2;
-			cout << "ÔÂ2£º";
+			cout << "æœˆ2ï¼š";
 			cin >> uMonthInput2;
-			cout << "ÈÕ2£º";
+			cout << "æ—¥2ï¼š";
 			cin >> uDayInput2;
 			YMDDate YMDDate1(uYearInput1, uMonthInput1, uDayInput1);
 			YMDDate YMDDate2(uYearInput2, uMonthInput2, uDayInput2);
 
 			int iSortType = 1;
-			cout << "ÇëÑ¡ÔñÅÅĞò·½·¨£º1. °´ÕÕÈÕÆÚÉıĞò¡£ 2. °´ÕÕÃû³ÆÊ××ÖÄ¸ÉıĞò¡£" 
+			cout << "è¯·é€‰æ‹©æ’åºæ–¹æ³•ï¼š1. æŒ‰ç…§æ—¥æœŸå‡åºã€‚ 2. æŒ‰ç…§åç§°é¦–å­—æ¯å‡åºã€‚" 
 				 << endl;
 			do {
 				cin >> iSortType;
 				if (iSortType != 1 && iSortType != 2) {
-					cout << "ÄúµÄÊäÈë³¬³ö·¶Î§¡£ÇëÑ¡ÔñÅÅĞò·½·¨£º1. °´ÕÕÈÕÆÚÉıĞò¡£"
-						 <<" 2. °´ÕÕÃû³ÆÊ××ÖÄ¸ÉıĞò¡£" << endl;
+					cout << "æ‚¨çš„è¾“å…¥è¶…å‡ºèŒƒå›´ã€‚è¯·é€‰æ‹©æ’åºæ–¹æ³•ï¼š1. æŒ‰ç…§æ—¥æœŸå‡åºã€‚"
+						 <<" 2. æŒ‰ç…§åç§°é¦–å­—æ¯å‡åºã€‚" << endl;
 				}
 			} while (iSortType != 1 && iSortType != 2);
 
@@ -275,23 +275,23 @@ int main() {
 				ctr.SearchAndSortFestival(YMDDate1, YMDDate2, SortType::BY_NAME);
 			}
 		}
-		//¹¦ÄÜ6£º²éÑ¯Ä³Î´À´½ÚÈÕµÄµ¹ÊıÈÕ
+		//åŠŸèƒ½6ï¼šæŸ¥è¯¢æŸæœªæ¥èŠ‚æ—¥çš„å€’æ•°æ—¥
 		if (uChoiceNum == 6) {
-			cout << "ÇëÊäÈëÄ³Î´À´µÄ½ÚÈÕÃû³Æ£¬²é¿´¸Ã½ÚÈÕµÄµ¹¼ÆÊ±¡£" << endl;
-			cout << "Ãû³Æ£º";
+			cout << "è¯·è¾“å…¥æŸæœªæ¥çš„èŠ‚æ—¥åç§°ï¼ŒæŸ¥çœ‹è¯¥èŠ‚æ—¥çš„å€’è®¡æ—¶ã€‚" << endl;
+			cout << "åç§°ï¼š";
 			string sNameInput;
 			cin >> sNameInput;
 			ctr.CountDownFestival(sNameInput);
 			cout << endl;
 		}
 
-		//Ñ­»·³ö¿Ú£ºÊäÈë0£¬Ö±½ÓÍË³ö³ÌĞò
+		//å¾ªç¯å‡ºå£ï¼šè¾“å…¥0ï¼Œç›´æ¥é€€å‡ºç¨‹åº
 		if (uChoiceNum == 0) {
 			break;
 		}
 
 
-		cout << "ÊäÈë¡°0¡±ÍË³ö£¬ÊäÈëÆäËûÊı×Ö¼ÌĞø..." << endl;
+		cout << "è¾“å…¥â€œ0â€é€€å‡ºï¼Œè¾“å…¥å…¶ä»–æ•°å­—ç»§ç»­..." << endl;
 		cin >> iExitCommand;
 	}
 	return 0;

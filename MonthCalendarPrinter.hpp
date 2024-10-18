@@ -1,9 +1,9 @@
 /*************************************************************************
-¡¾ÎÄ¼şÃû¡¿ MonthCalendarPrinter.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤MonthCalendarPrinterÀà£¬¼¯ÖĞ±àĞ´MonthCalendarPrinter
-				  Àà³ÉÔ±º¯ÊıµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€æ–‡ä»¶åã€‘ MonthCalendarPrinter.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤MonthCalendarPrinterç±»ï¼Œé›†ä¸­ç¼–å†™MonthCalendarPrinter
+				  ç±»æˆå‘˜å‡½æ•°çš„å£°æ˜ã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 #ifndef MonthCalendarPrinter_hpp
 #define MonthCalendarPrinter_hpp
@@ -19,32 +19,32 @@
 #include <algorithm>
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ MonthCalendarPrinter
-¡¾¹¦ÄÜ¡¿ ¸ºÔğ´òÓ¡ÔÂÀúºÍµ±ÔÂ½ÚÈÕµÄ¹¦ÄÜ
-¡¾½Ó¿ÚËµÃ÷¡¿ 1¸öPrintCalendar´òÓ¡ÔÂÀú£¬1¸öPrintFestivals´òÓ¡½ÚÈÕlist
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïĞ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎŞ
+ã€ç±»åã€‘ MonthCalendarPrinter
+ã€åŠŸèƒ½ã€‘ è´Ÿè´£æ‰“å°æœˆå†å’Œå½“æœˆèŠ‚æ—¥çš„åŠŸèƒ½
+ã€æ¥å£è¯´æ˜ã€‘ 1ä¸ªPrintCalendaræ‰“å°æœˆå†ï¼Œ1ä¸ªPrintFestivalsæ‰“å°èŠ‚æ—¥list
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class MonthCalendarPrinter {
 public:
-	//É¾³ıÄ¬ÈÏ¹¹Ôìº¯Êı¡¢¿½±´¹¹Ôìº¯Êı
+	//åˆ é™¤é»˜è®¤æ„é€ å‡½æ•°ã€æ‹·è´æ„é€ å‡½æ•°
 	MonthCalendarPrinter() = delete;
 	MonthCalendarPrinter(const MonthCalendarPrinter&) = delete;
 
-	//´ø²ÎÊıµÄ¹¹Ôìº¯Êı
+	//å¸¦å‚æ•°çš„æ„é€ å‡½æ•°
 	MonthCalendarPrinter(const unsigned int& uYear
 						, const unsigned int& uMonth);
-	//Ä¬ÈÏÎö¹¹º¯Êı
+	//é»˜è®¤ææ„å‡½æ•°
 	~MonthCalendarPrinter() = default;
 
-	//ÅÅĞòµ±ÈÕ½ÚÈÕ
+	//æ’åºå½“æ—¥èŠ‚æ—¥
 	static bool CmpByDate(Festival::FestivalInThisYear* a
 						, Festival::FestivalInThisYear* b);
-	//´òÓ¡ÔÂÀú
+	//æ‰“å°æœˆå†
 	void PrintCalendar(const unsigned int& uYear
 					, const unsigned int& uMonth) const;
 
-	//´òÓ¡µ±ÔÂ½ÚÈÕ
+	//æ‰“å°å½“æœˆèŠ‚æ—¥
 	void PrintFestivals(const unsigned int& uYear
 					, const unsigned int& uMonth) const;
 private:

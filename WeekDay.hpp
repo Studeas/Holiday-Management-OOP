@@ -1,8 +1,8 @@
 /*************************************************************************
-¡¾ÎÄ¼þÃû¡¿ WeekDay.hpp
-¡¾¹¦ÄÜÄ£¿éºÍÄ¿µÄ¡¿ Î¬»¤WeekDayÀà£¬¼¯ÖÐ±àÐ´WeekDayÀà³ÉÔ±º¯ÊýµÄÉùÃ÷¡£
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€æ–‡ä»¶åã€‘ WeekDay.hpp
+ã€åŠŸèƒ½æ¨¡å—å’Œç›®çš„ã€‘ ç»´æŠ¤WeekDayç±»ï¼Œé›†ä¸­ç¼–å†™WeekDayç±»æˆå‘˜å‡½æ•°çš„å£°æ˜Žã€‚
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 
 #ifndef WeekDay_hpp
@@ -15,92 +15,92 @@ using std::exception;
 using std::invalid_argument;
 
 /*************************************************************************
-¡¾ÀàÃû¡¿ WeekDay
-¡¾¹¦ÄÜ¡¿ ÐÇÆÚ¹ÜÀí
-¡¾½Ó¿ÚËµÃ÷¡¿ 2¸ögetterÓÃÀ´»ñÈ¡Êý¾Ý£¬2¸ösetterÓÃÀ´ÐÞ¸Ä³ÉÔ±Êý¾Ý£¬3¸ötoname»ñµÃÃû³Æ
-            ×Ö·û´®£¬Èô¸ÉÔËËã·ûÖØÔØ
-¡¾¿ª·¢Õß¼°ÈÕÆÚ¡¿ ËïÐ¡¿µ£¬2023.08.02
-¡¾¸ü¸Ä¼ÇÂ¼¡¿ ÎÞ
+ã€ç±»åã€‘ WeekDay
+ã€åŠŸèƒ½ã€‘ æ˜ŸæœŸç®¡ç†
+ã€æŽ¥å£è¯´æ˜Žã€‘ 2ä¸ªgetterç”¨æ¥èŽ·å–æ•°æ®ï¼Œ2ä¸ªsetterç”¨æ¥ä¿®æ”¹æˆå‘˜æ•°æ®ï¼Œ3ä¸ªtonameèŽ·å¾—åç§°
+            å­—ç¬¦ä¸²ï¼Œè‹¥å¹²è¿ç®—ç¬¦é‡è½½
+ã€å¼€å‘è€…åŠæ—¥æœŸã€‘ Studeasï¼Œ2023.08.02
+ã€æ›´æ”¹è®°å½•ã€‘ æ— 
 *************************************************************************/
 class WeekDay {
 public:
-    //Å×³öÒì³£ÀàÐÍ
+    //æŠ›å‡ºå¼‚å¸¸ç±»åž‹
     class ExecptionWrongValue : public invalid_argument {
     public:
         ExecptionWrongValue();
     };
-    //ÐÇÆÚµÄÖµ
+    //æ˜ŸæœŸçš„å€¼
     enum class ValueType : unsigned int {
         MON = 1, TUES = 2, WED = 3, THUR = 4, FRI = 5, SAT = 6, SUN = 7
     };
-    //Ãû³ÆÀàÐÍ
+    //åç§°ç±»åž‹
     enum class NameType : unsigned int {
         SHORT = 0, FULL = 1
     };
-    //¹¹Ôìº¯Êý
+    //æž„é€ å‡½æ•°
     WeekDay(const ValueType& Value);
     WeekDay(const unsigned int& Value);
-    //É¾³ýÄ¬ÈÏ¹¹Ôìº¯Êý
+    //åˆ é™¤é»˜è®¤æž„é€ å‡½æ•°
     WeekDay() = delete;
-    //Ä¬ÈÏ¿½±´¹¹Ôì¡¢Îö¹¹º¯ÊýºÍÄ¬ÈÏ¸³ÖµÔËËã·û
+    //é»˜è®¤æ‹·è´æž„é€ ã€æžæž„å‡½æ•°å’Œé»˜è®¤èµ‹å€¼è¿ç®—ç¬¦
     WeekDay(const WeekDay&) = default;
     WeekDay& operator=(const WeekDay&) = default;
     ~WeekDay() = default;
-    //¸³ÖµÔËËã·û
+    //èµ‹å€¼è¿ç®—ç¬¦
     WeekDay& operator= (const ValueType& Value);
 
-    //ÉèÖÃÐÇÆÚ
+    //è®¾ç½®æ˜ŸæœŸ
     void Set(const ValueType& Value);
     void Set(const unsigned int& Value);
 
-    //==ÔËËã·û
+    //==è¿ç®—ç¬¦
     bool        operator==(const WeekDay& Source) const;
     bool        operator==(const ValueType& Source) const;
     friend bool operator==(const WeekDay::ValueType& Value
                          , const WeekDay& WeekDay);
-    //!=ÔËËã·û
+    //!=è¿ç®—ç¬¦
     bool        operator!=(const WeekDay& Source) const;
     bool        operator!=(const ValueType& Source) const;
     friend bool operator!=(const WeekDay::ValueType& Value
                          , const WeekDay& WeekDay);
-    //>ÔËËã·û
+    //>è¿ç®—ç¬¦
     bool        operator> (const WeekDay& Source) const;
     bool        operator> (const ValueType& Source) const;
     friend bool operator> (const WeekDay::ValueType& Value
                          , const WeekDay& WeekDay);
-    //>=ÔËËã·û
+    //>=è¿ç®—ç¬¦
     bool        operator>=(const WeekDay& Source) const;
     bool        operator>=(const ValueType& Source) const;
     friend bool operator>=(const WeekDay::ValueType& Value
                          , const WeekDay& WeekDay);
-    //<ÔËËã·û
+    //<è¿ç®—ç¬¦
     bool        operator< (const WeekDay& Source) const;
     bool        operator< (const ValueType& Source) const;
     friend bool operator< (const WeekDay::ValueType& Value
                          , const WeekDay& WeekDay);
-    //<=ÔËËã·û
+    //<=è¿ç®—ç¬¦
     bool        operator<=(const WeekDay& Source) const;
     bool        operator<=(const ValueType& Source) const;
     friend bool operator<=(const WeekDay::ValueType& Value
                          , const WeekDay& WeekDay);
-    //Ç°ÖÃ++ÔËËã·û
+    //å‰ç½®++è¿ç®—ç¬¦
     WeekDay& operator++();
     WeekDay  operator++(int);
-    //ºóÖÃ++ÔËËã·û
+    //åŽç½®++è¿ç®—ç¬¦
     WeekDay& operator--();
     WeekDay  operator--(int);
 
-    //×ª»»³É×Ö·û´®Ãû³Æ
+    //è½¬æ¢æˆå­—ç¬¦ä¸²åç§°
     static string ToName(const WeekDay& Source
                         , const NameType& Type = NameType::SHORT);
     static string ToName(const ValueType& Source
                         , const NameType& Type = NameType::SHORT);
     string ToName(const NameType& Type = NameType::SHORT) const;
 
-    //()ÔËËã·û
+    //()è¿ç®—ç¬¦
     unsigned int operator()() const;
 
-    //»ñµÃÐÇÆÚµÄÖµ
+    //èŽ·å¾—æ˜ŸæœŸçš„å€¼
     unsigned int GetActualValue() const;
     static unsigned int GetActualValue(const WeekDay& WeekDay);
 
